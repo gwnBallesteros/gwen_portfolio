@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="A working glossary of commercial lines insurance terminology — Additional Insured, Aggregate Limit, BOP, Loss Run, MOD, Subrogation, Workers' Comp, and more. Plain-English definitions for account managers, agency staff, and anyone working with U.S. commercial insurance." />
-<title>Insurance Glossary — Gwen Ballesteros</title>
+<meta name="description" content="Commercial lines support for U.S. manufacturing agencies and brokerages. Product liability, equipment breakdown, workers comp class codes, and the placement detail that keeps manufacturers properly insured." />
+<title>Manufacturing Insurance Support — Gwen Ballesteros</title>
 <!-- SEO + Social meta -->
-<link rel="canonical" href="https://gwenballesteros.works/glossary/" />
+<link rel="canonical" href="https://gwenballesteros.works/industries/manufacturing/" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="Insurance Glossary — Gwen Ballesteros" />
-<meta property="og:description" content="A working glossary of commercial lines insurance terminology. Plain-English definitions of the terms that come up daily on a commercial lines desk." />
-<meta property="og:url" content="https://gwenballesteros.works/glossary/" />
+<meta property="og:title" content="Manufacturing Insurance Support — Gwen Ballesteros" />
+<meta property="og:description" content="Commercial lines support for U.S. manufacturing agencies and brokerages. Product liability, equipment breakdown, workers comp class codes, and the placement detail that keeps manufacturers properly insured." />
+<meta property="og:url" content="https://gwenballesteros.works/industries/manufacturing/" />
 <meta property="og:image" content="https://gwenballesteros.works/og-image.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:site_name" content="Gwen Ballesteros" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Insurance Glossary — Gwen Ballesteros" />
-<meta name="twitter:description" content="A working glossary of commercial lines insurance terminology. Plain-English definitions of the terms that come up daily on a commercial lines desk." />
+<meta name="twitter:title" content="Manufacturing Insurance Support — Gwen Ballesteros" />
+<meta name="twitter:description" content="Commercial lines support for U.S. manufacturing agencies and brokerages. Product liability, equipment breakdown, workers comp class codes, and the placement detail that keeps manufacturers properly insured." />
 <meta name="twitter:image" content="https://gwenballesteros.works/og-image.png" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -846,54 +846,57 @@ a { transition: color 200ms ease; }
 
 </style>
 <style>
-  .az-nav {
-    display: flex; flex-wrap: wrap; gap: 0;
-    padding: 1.5rem 0;
+  .ind-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--c-line-strong); }
+  .ind-cell {
+    padding: 2.4rem 2rem;
+    border-bottom: 1px solid var(--c-line-strong);
+    border-right: 1px solid var(--c-line);
+    transition: background 220ms ease;
+  }
+  .ind-cell:nth-child(2n) { border-right: 0; }
+  .ind-cell:hover { background: var(--c-surface); }
+  .ind-cell .icnum {
+    font-family: var(--f-mono); font-size: 0.7rem;
+    color: var(--c-accent); letter-spacing: 0.16em; display: block; margin-bottom: 1rem;
+  }
+  .ind-cell h3 {
+    font-family: var(--f-display); font-size: 1.6rem;
+    line-height: 1.05; font-weight: 400; margin: 0 0 0.7rem;
+  }
+  .ind-cell h3 em { color: var(--c-accent); font-style: italic; }
+  .ind-cell p { margin: 0; font-size: 0.96rem; line-height: 1.6; }
+  @media (max-width: 700px) { .ind-grid { grid-template-columns: 1fr; } .ind-cell { border-right: 0 !important; } }
+  .pull {
+    font-family: var(--f-display);
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    line-height: 1.25; font-style: italic;
     border-top: 1px solid var(--c-line-strong);
     border-bottom: 1px solid var(--c-line-strong);
-    margin-bottom: 3rem;
-    position: sticky; top: 60px; z-index: 10;
-    background: rgba(244, 237, 224, 0.95);
-    backdrop-filter: blur(8px);
+    padding: 2rem 0; margin: 3rem 0;
+    max-width: 56ch;
   }
-  .az-nav a {
-    font-family: var(--f-mono); font-size: 0.78rem;
-    font-weight: 500; padding: 0.4rem 0.7rem;
-    color: var(--c-muted); transition: color 200ms ease;
+  .pull em { color: var(--c-accent); }
+  .cov-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 2rem; padding: 0; list-style: none; }
+  .cov-list li {
+    font-family: var(--f-display); font-size: 1.2rem; line-height: 1.5;
+    padding: 0.4rem 0; border-bottom: 1px solid var(--c-line);
   }
-  .az-nav a:hover, .az-nav a.has-terms { color: var(--c-text); }
-  .az-nav a.has-terms { color: var(--c-accent); }
-
-  .letter-section { padding: 2rem 0 3rem; scroll-margin-top: 6rem; }
-  .letter-section h2 {
-    font-family: var(--f-display); font-size: 7rem;
-    font-weight: 400; line-height: 0.9; letter-spacing: -0.04em;
-    margin: 0 0 1rem; color: var(--c-accent);
-    border-bottom: 1px solid var(--c-line);
-    padding-bottom: 1rem;
+  .cov-list li::before { content: '· '; color: var(--c-accent); }
+  @media (max-width: 700px) { .cov-list { grid-template-columns: 1fr; } }
+  .cta-block {
+    background: var(--c-text); color: var(--c-dark-text);
+    padding: 4rem 3rem; margin-top: 4rem;
+    border-radius: var(--radius);
   }
-  .term-list { list-style: none; margin: 0; padding: 0; }
-  .term {
-    padding: 1.6rem 0;
-    border-bottom: 1px solid var(--c-line);
-    display: grid; grid-template-columns: 1fr 2.4fr;
-    gap: 2.5rem; align-items: baseline;
+  .cta-block h3 {
+    font-family: var(--f-display);
+    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+    line-height: 1.1; font-weight: 400; margin: 0 0 1.5rem; max-width: 24ch;
   }
-  .term .term-name {
-    font-family: var(--f-display); font-size: 1.6rem;
-    font-weight: 400; line-height: 1.1; margin: 0;
-    letter-spacing: -0.005em;
-  }
-  .term .term-name em { color: var(--c-accent); font-style: italic; }
-  .term .term-def {
-    font-size: 1.02rem; line-height: 1.6; margin: 0;
-    color: var(--c-text);
-  }
-  .term .term-def strong { color: var(--c-accent); font-weight: 500; }
-  @media (max-width: 700px) {
-    .term { grid-template-columns: 1fr; gap: 0.5rem; }
-    .letter-section h2 { font-size: 4.5rem; }
-  }
+  .cta-block h3 em { color: var(--c-accent); font-style: italic; }
+  .cta-block p { font-size: 1.05rem; max-width: 56ch; margin: 0 0 2rem; opacity: 0.85; }
+  .cta-block .btn { background: var(--c-accent); border-color: var(--c-accent); }
+  .cta-block .btn:hover { background: var(--c-bg); color: var(--c-text); border-color: var(--c-bg); }
 </style>
 </head>
 <body>
@@ -909,9 +912,9 @@ a { transition: color 200ms ease; }
     <nav class="nav-links" aria-label="Primary">
       <a href="/notes/">Notes</a>
       <a href="/services/renewals/">Services</a>
-      <a href="/industries/">Industries</a>
+      <a href="index.html" class="current">Industries</a>
       <a href="/resources/">Resources</a>
-      <a href="index.html" class="current">Glossary</a>
+      <a href="/glossary/">Glossary</a>
     </nav>
     <span class="availability">Open to new engagements</span>
   </div>
@@ -921,311 +924,103 @@ a { transition: color 200ms ease; }
   <div class="container">
     <div class="page-meta">
       <a href="/">Home</a>
-      <span class="crumb">GLOSSARY</span>
+      <a href="#">Industries</a>
+      <span class="crumb">MANUFACTURING</span>
     </div>
-    <h1 class="page-title">A working <em>glossary</em> of commercial lines.</h1>
+    <h1 class="page-title">Manufacturing <em>insurance</em> support, product to property.</h1>
     <p class="page-lead">
-      Plain-English definitions of the terms that come up daily on a commercial
-      lines desk. Built for account managers, agency staff, and anyone working
-      around U.S. insurance who wants the practical version, not the textbook
-      one.
+      Commercial lines support for agencies with manufacturing books. From small fabricators to multi-state production facilities. Product liability, equipment breakdown, workers comp accuracy, and the placement detail that keeps the GL form, the product form, and the WC class code all telling the same story.
     </p>
   </div>
 </section>
 
-<section class="container">
+<article class="article drop-cap">
+  <div class="container">
 
+    <p>Manufacturing is the line where the GL form, the product form, and the workers comp class code each tell a different story about the same business. A custom metal shop is a different rate class than a job shop is a different class than a contract manufacturer. The application has to match the operation, and the operation has to match the policy declarations. Misalignment is the most common cause of denied product liability claims.</p>
 
-  <div class="gloss-search">
-    <input type="search" id="glossary-search" placeholder="Search terms — try 'subrogation' or 'COI'..." aria-label="Search glossary terms" />
+    <p>I service manufacturing accounts ranging from solo fabricators to multi-line production facilities. The work spans new business quoting with detailed product schedules, certificate management for vendors and customers, audit support, and the renewal lifecycle from prep through bind. The discipline is making sure the placement reflects the operation.</p>
+
+    <blockquote class="pull">
+      Manufacturing is the line where the <em>GL form</em>, the product form, and the workers comp class code each tell a different story about the same business.
+    </blockquote>
+
+    <h2>Coverages I work with daily</h2>
+
+    <ul class="cov-list">
+      <li>General Liability (Products &amp; Completed Operations)</li>
+      <li>Product Liability (Specific Endorsements)</li>
+      <li>Commercial Property (Buildings, Stock, Machinery)</li>
+      <li>Equipment Breakdown / Boiler &amp; Machinery</li>
+      <li>Workers&rsquo; Compensation</li>
+      <li>Commercial Auto</li>
+      <li>Inland Marine (Goods in Transit)</li>
+      <li>Pollution Liability</li>
+      <li>Cyber Liability</li>
+      <li>Excess &amp; Umbrella Liability</li>
+    </ul>
+
+    <h2>What construction accounts actually need</h2>
+
   </div>
+</article>
 
-  <nav class="az-nav" aria-label="Alphabet navigation">
-    <a href="#a" class="has-terms">A</a>
-    <a href="#b" class="has-terms">B</a>
-    <a href="#c" class="has-terms">C</a>
-    <a href="#d" class="has-terms">D</a>
-    <a href="#e" class="has-terms">E</a>
-    <a href="#g" class="has-terms">G</a>
-    <a href="#h" class="has-terms">H</a>
-    <a href="#i" class="has-terms">I</a>
-    <a href="#l" class="has-terms">L</a>
-    <a href="#m" class="has-terms">M</a>
-    <a href="#n" class="has-terms">N</a>
-    <a href="#o" class="has-terms">O</a>
-    <a href="#p" class="has-terms">P</a>
-    <a href="#r" class="has-terms">R</a>
-    <a href="#s" class="has-terms">S</a>
-    <a href="#u" class="has-terms">U</a>
-    <a href="#w" class="has-terms">W</a>
-    <a href="#x" class="has-terms">X</a>
-  </nav>
+<section class="editorial-section">
+  <div class="container">
+    <div class="ind-grid reveal">
 
-  <section id="a" class="letter-section">
-    <h2>A</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Additional <em>Insured</em></h3>
-        <p class="term-def">A person or organization, other than the named insured, who is granted coverage under a policy. Common in construction and lease agreements where one party requires coverage from another's policy. <strong>Practical note:</strong> the language matters; "blanket additional insured" endorsements are very different from scheduled additional insureds.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Aggregate <em>Limit</em></h3>
-        <p class="term-def">The maximum the insurer will pay for all covered losses during the policy period, regardless of the number of claims. Once exhausted, no more coverage applies even if the policy is still active.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Admitted <em>Carrier</em></h3>
-        <p class="term-def">A carrier licensed and approved by the state insurance department to write business in that state. Backed by the state guaranty fund. Distinguished from non-admitted (E&amp;S) carriers.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Audit, <em>Workers' Comp</em></h3>
-        <p class="term-def">An end-of-policy review where the carrier reconciles actual payroll and class codes against the estimates the policy was bound on. Can result in additional premium owed or a refund.</p>
-      </li>
-    </ul>
-  </section>
+      <div class="ind-cell">
+        <span class="icnum">No. 01</span>
+        <h3>Product liability <em>discipline.</em></h3>
+        <p>Product schedules accurate, hazard groups correctly classified, foreign exposure addressed, recall coverage considered. Product claims fail or pay based on placement, not on facts.</p>
+      </div>
 
-  <section id="b" class="letter-section">
-    <h2>B</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">BOP <em>(Business Owner's Policy)</em></h3>
-        <p class="term-def">A package policy combining property, general liability, and business interruption coverage for small to mid-sized businesses. Designed for low-hazard operations; not available for high-risk industries.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Builders <em>Risk</em></h3>
-        <p class="term-def">Property coverage on a structure during the course of construction, renovation, or repair. Covers materials, fixtures, and equipment to be installed. Typically written on a project basis.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Binder</h3>
-        <p class="term-def">A temporary written agreement of coverage issued before the policy itself is delivered. Has the same effect as the policy until it expires (usually 30-90 days) or the policy is issued.</p>
-      </li>
-    </ul>
-  </section>
+      <div class="ind-cell">
+        <span class="icnum">No. 02</span>
+        <h3>Class code <em>accuracy.</em></h3>
+        <p>Manufacturing class codes are nuanced. The wrong code costs thousands per year. I review codes against actual operations and push back on misclassifications during audits.</p>
+      </div>
 
-  <section id="c" class="letter-section">
-    <h2>C</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Certificate of <em>Insurance (COI)</em></h3>
-        <p class="term-def">A document evidencing that an insurance policy is in force. Used to satisfy contractual requirements with vendors, landlords, and subcontractors. The COI itself does not modify or extend coverage; the underlying policy controls.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Class <em>Code</em></h3>
-        <p class="term-def">A numeric classification assigned to a workers' comp risk based on the type of work performed. Drives the rate per $100 of payroll. Misclassification is one of the most common audit disputes.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Commercial <em>Auto</em></h3>
-        <p class="term-def">Automobile coverage for vehicles used in business. Distinct from personal auto in scope, limits, and rating. Includes hired and non-owned auto endorsements for vehicles not titled to the named insured.</p>
-      </li>
-    </ul>
-  </section>
+      <div class="ind-cell">
+        <span class="icnum">No. 03</span>
+        <h3>Equipment <em>breakdown.</em></h3>
+        <p>A CNC down for a week can cost more than a building fire. Equipment breakdown limits matched to actual replacement cost and downtime exposure.</p>
+      </div>
 
-  <section id="d" class="letter-section">
-    <h2>D</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Deductible</h3>
-        <p class="term-def">The amount the insured pays out of pocket on a covered claim before the carrier's coverage kicks in. Higher deductibles lower premium; lower deductibles raise it.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Declarations <em>Page</em></h3>
-        <p class="term-def">The first page of a policy summarizing the named insured, policy period, limits, deductibles, and premium. Often the only page anyone reads. Get it right.</p>
-      </li>
-    </ul>
-  </section>
+      <div class="ind-cell">
+        <span class="icnum">No. 04</span>
+        <h3>Workers comp <em>audits.</em></h3>
+        <p>Manufacturing audits go deep on payroll, OT, subcontractor labor, and class splits. Audit packets prepared with supporting documentation, not just totals.</p>
+      </div>
 
-  <section id="e" class="letter-section">
-    <h2>E</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">E&amp;O <em>(Errors &amp; Omissions)</em></h3>
-        <p class="term-def">Professional liability coverage protecting service providers (including agents and brokers) from claims of negligent acts, errors, or omissions in the conduct of their business.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">E&amp;S <em>Lines</em></h3>
-        <p class="term-def">Excess &amp; Surplus lines. Coverage written by non-admitted carriers for risks the admitted market won't take. Not backed by the state guaranty fund. Premium is typically higher and coverage forms vary.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Endorsement</h3>
-        <p class="term-def">A written modification to a policy that adds, deletes, or changes coverage. Issued mid-term to reflect changes in the insured's operations. Each one needs to be documented and the insured advised.</p>
-      </li>
-    </ul>
-  </section>
+      <div class="ind-cell">
+        <span class="icnum">No. 05</span>
+        <h3>Carrier <em>placement.</em></h3>
+        <p>Construction is appetite-sensitive. I know which carriers write trade contractors, who's open to artisan, who's writing residential vs commercial, and where E&amp;S is the right move. Less ping-pong, more bound business.</p>
+      </div>
 
-  <section id="g" class="letter-section">
-    <h2>G</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">General <em>Liability (GL)</em></h3>
-        <p class="term-def">Coverage for bodily injury and property damage caused by the insured's operations, products, or completed work. The foundation policy of nearly every commercial program.</p>
-      </li>
-    </ul>
-  </section>
+      <div class="ind-cell">
+        <span class="icnum">No. 06</span>
+        <h3>Renewal <em>narratives.</em></h3>
+        <p>New product line? New equipment? Down year for claims? The story written in one paragraph at the top of the submission, before the underwriter forms their own.</p>
+      </div>
 
-  <section id="h" class="letter-section">
-    <h2>H</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Hired &amp; <em>Non-Owned</em> Auto</h3>
-        <p class="term-def">Coverage for vehicles the insured rents (hired) or doesn't own but uses for business (non-owned, like employees' personal cars used for errands). Often overlooked; often the source of E&amp;O claims when overlooked.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Hard <em>Market</em></h3>
-        <p class="term-def">A market cycle where carriers raise rates, tighten underwriting, and decline classes of business. Renewals get harder. Specialty markets fill the gap.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="i" class="letter-section">
-    <h2>I</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Inland <em>Marine</em></h3>
-        <p class="term-def">Property coverage for goods in transit, contractor's tools and equipment, fine arts, and other movable property. Despite the name, almost nothing about it is marine.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">ISO</h3>
-        <p class="term-def">Insurance Services Office. The organization that develops standardized policy forms and rating data used across most carriers. When a carrier "uses ISO forms," they're using these standards.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="l" class="letter-section">
-    <h2>L</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Limit <em>of Liability</em></h3>
-        <p class="term-def">The maximum the insurer will pay on a covered claim. Can be per-occurrence, per-claim, or aggregate. Read the declarations carefully — multiple limit structures often apply.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Loss <em>Ratio</em></h3>
-        <p class="term-def">Losses paid plus reserves divided by premium earned. The carrier's profitability metric on a book of business. Influences renewal pricing across an entire portfolio.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Loss <em>Run</em></h3>
-        <p class="term-def">A claims history report from a carrier showing all losses, reserves, and payments over a defined period (usually 5 years). The single most important document in renewal underwriting.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="m" class="letter-section">
-    <h2>M</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">MOD <em>(Experience Modification)</em></h3>
-        <p class="term-def">A multiplier applied to a workers' comp premium based on the insured's claims history relative to peers. 1.0 is average. Below 1.0 saves money; above 1.0 costs more.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">MGA <em>(Managing General Agent)</em></h3>
-        <p class="term-def">A specialized intermediary with binding authority on behalf of one or more carriers. Often handles specific niches (E&amp;S, programs) the carrier doesn't service directly.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Manuscript <em>Endorsement</em></h3>
-        <p class="term-def">A custom endorsement drafted to address a unique exposure not covered by standard form language. Written from scratch rather than pulled from ISO templates.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="n" class="letter-section">
-    <h2>N</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Named <em>Insured</em></h3>
-        <p class="term-def">The person or entity specifically named on the declarations page. Has the broadest rights under the policy. The first named insured (when multiple are listed) has additional rights and responsibilities.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="o" class="letter-section">
-    <h2>O</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Occurrence <em>Form</em></h3>
-        <p class="term-def">A liability policy that responds to claims arising from incidents that occurred during the policy period, regardless of when the claim is filed. Distinguished from claims-made coverage.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="p" class="letter-section">
-    <h2>P</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Primary &amp; <em>Non-Contributory</em></h3>
-        <p class="term-def">Endorsement language requiring the insured's policy to respond first and not seek contribution from any other applicable coverage. Routinely required in construction contracts.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Premium</h3>
-        <p class="term-def">The amount paid for coverage. Calculated from rate (per unit of exposure) times exposure (payroll, sales, vehicles, square footage). Adjusted by experience modification and credits/debits.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="r" class="letter-section">
-    <h2>R</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Renewal</h3>
-        <p class="term-def">The continuation of a policy at the end of its term. Not automatic; requires the carrier to offer continued terms and the insured to accept. Renewal underwriting can result in non-renewal, rate increases, or coverage changes.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Reserve</h3>
-        <p class="term-def">The carrier's estimated future payment on an open claim. Set by the claims adjuster based on facts known. Reserves move as new information emerges; total incurred = paid + reserved.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="s" class="letter-section">
-    <h2>S</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Subrogation</h3>
-        <p class="term-def">The carrier's right to pursue recovery from a third party responsible for a loss the carrier paid. After paying its insured, the carrier "stands in the insured's shoes" and seeks reimbursement.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Surplus <em>Lines</em></h3>
-        <p class="term-def">See E&amp;S Lines. Same concept, different name. Each state regulates surplus lines transactions through its own surplus lines law.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="u" class="letter-section">
-    <h2>U</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Umbrella <em>Liability</em></h3>
-        <p class="term-def">Excess liability coverage that sits above the limits of underlying policies (typically GL, auto, employer's liability). Often broader than the underlying coverage and may "drop down" to fill gaps.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Underwriting</h3>
-        <p class="term-def">The process of evaluating risk, determining whether to offer coverage, and pricing the offered coverage. Performed by a carrier (or MGA) on every new and renewal submission.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="w" class="letter-section">
-    <h2>W</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">Waiver of <em>Subrogation</em></h3>
-        <p class="term-def">An endorsement under which the insured agrees their carrier will not pursue subrogation against a specified third party. Routinely required by clients of construction contractors and other vendors.</p>
-      </li>
-      <li class="term">
-        <h3 class="term-name">Workers' <em>Compensation</em></h3>
-        <p class="term-def">Statutory coverage providing medical care and wage replacement to employees injured in the course of employment. Required in nearly every state with limited exceptions for sole proprietors and small employers.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section id="x" class="letter-section">
-    <h2>X</h2>
-    <ul class="term-list">
-      <li class="term">
-        <h3 class="term-name">XCU</h3>
-        <p class="term-def">Coverage for risks of e<strong>X</strong>plosion, <strong>C</strong>ollapse, and <strong>U</strong>nderground property damage. Often excluded by default in construction GL policies; needs specific endorsement to add.</p>
-      </li>
-    </ul>
-  </section>
-
+    </div>
+  </div>
 </section>
+
+<section class="editorial-section">
+  <div class="container">
+    <div class="cta-final reveal">
+      <h3>If your manufacturing book has product liability exposure and audit complexity, <em>let&rsquo;s talk.</em></h3>
+      <p>
+        Whether it&rsquo;s overflow on a busy product renewal, dedicated support for a single multi-state manufacturer, or full back-office for your manufacturing vertical, I plug into your AMS, review the product schedule, and start clearing endorsements by week one.
+      </p>
+      <a href="/#contact" class="btn">Start a conversation <span class="arrow">→</span></a>
+    </div>
+  </div>
+<div class="divider-marks reveal"><span></span><span></span><span></span></div>
+  </section>
 
 <footer class="footer">
   <div class="container">
@@ -1244,13 +1039,13 @@ a { transition: color 200ms ease; }
           <li><a href="/">Home</a></li>
           <li><a href="/notes/">Field Notes</a></li>
           <li><a href="/services/renewals/">Services</a></li>
-          <li><a href="/industries/">Industries</a></li>
           <li><a href="/resources/">Resources</a></li>
+          <li><a href="/glossary/">Glossary</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <span class="foot-label">Colophon</span>
-        <p>Set in Instrument Serif and Manrope. Hand-built as a single self-contained page, no trackers, no frameworks.</p>
+        <p>Set in Instrument Serif and Manrope, with JetBrains Mono for technical accents.</p>
         <span style="font-family:var(--f-mono);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--c-muted);">U.S. · Philippines (Remote) · PHT (UTC+8)</span>
       </div>
     </div>
@@ -1264,23 +1059,6 @@ a { transition: color 200ms ease; }
 
 <script>
 (function () {
-  var input = document.getElementById('glossary-search');
-  if (input) {
-    input.addEventListener('input', function () {
-      var q = input.value.trim().toLowerCase();
-      var terms = document.querySelectorAll('.term');
-      terms.forEach(function (t) {
-        var text = t.textContent.toLowerCase();
-        t.classList.toggle('hidden', q.length > 0 && text.indexOf(q) === -1);
-      });
-      // Hide whole letter section if no terms visible inside
-      document.querySelectorAll('.letter-section').forEach(function (sec) {
-        var visible = sec.querySelectorAll('.term:not(.hidden)').length;
-        sec.style.display = visible === 0 && q.length > 0 ? 'none' : '';
-      });
-    });
-  }
-
   var els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
