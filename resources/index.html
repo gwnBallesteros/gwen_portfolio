@@ -1135,20 +1135,27 @@ a { transition: color 200ms ease; }
     </div>
 
     <div class="newsletter-inline reveal">
-      <h3>Get them all in <em>one email,</em> plus the next ones I make.</h3>
-      <p>
-        I send a short monthly email with new resources, recent Field Notes, and
-        practical insurance reading. No marketing fluff. About 4 minutes to read.
-        Unsubscribe whenever.
-      </p>
-      <form onsubmit="event.preventDefault(); alert('Newsletter signup: connect Buttondown or ConvertKit.')" onsubmit="event.preventDefault(); alert('Newsletter signup coming soon — connect Buttondown or ConvertKit to enable.')">
-        <input type="email" placeholder="your@email.com" required />
-        <button type="submit" class="btn">Subscribe <span class="arrow">→</span></button>
-      </form>
-      <small>Built on Buttondown. Zero spam, ever.</small>
+      <div>
+        <span class="nl-eyebrow">Resources &amp; Field Notes Newsletter</span>
+        <h4>Get them all in <em>one email,</em> plus the next ones I make.</h4>
+        <p>I send a short monthly email with new resources, recent Field Notes, and practical insurance reading. No marketing fluff. About 4 minutes to read. Unsubscribe whenever.</p>
+        <form onsubmit="event.preventDefault(); alert('Newsletter signup: connect Buttondown or ConvertKit to enable.')">
+          <input type="email" placeholder="your@email.com" required />
+          <button type="submit">Subscribe &rarr;</button>
+        </form>
+        <span class="nl-meta">Powered by Buttondown &middot; Zero spam, ever.</span>
+      </div>
+      <div class="nl-side">
+        <div class="nl-stat">~4<span style="font-size:2rem;color:var(--c-dark-text);opacity:0.55;">min</span></div>
+        <span class="nl-stat-label">Average read time</span>
+        <ul class="nl-promises">
+          <li>Practical, not promotional</li>
+          <li>Original writing only</li>
+          <li>One email per month, never more</li>
+          <li>Unsubscribe in one click</li>
+        </ul>
+      </div>
     </div>
-
-  </div>
 </section>
 
 <footer class="footer">
