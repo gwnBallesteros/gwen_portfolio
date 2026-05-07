@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Field Notes — practical writing on commercial lines insurance, underwriting, account management, and the quiet work behind every bound policy. By Gwen Ballesteros." />
+<title>Field Notes — Gwen Ballesteros</title>
+<!-- SEO + Social meta -->
+<link rel="canonical" href="https://gwenballesteros.works/notes/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Field Notes — Gwen Ballesteros" />
+<meta property="og:description" content="Practical writing on commercial lines insurance, underwriting, account management, and the quiet work behind every bound policy." />
+<meta property="og:url" content="https://gwenballesteros.works/notes/" />
+<meta property="og:image" content="https://gwenballesteros.works/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="Gwen Ballesteros" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Field Notes — Gwen Ballesteros" />
+<meta name="twitter:description" content="Practical writing on commercial lines insurance, underwriting, account management, and the quiet work behind every bound policy." />
+<meta name="twitter:image" content="https://gwenballesteros.works/og-image.png" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="theme-color" content="#c2410c" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+/* =========================================================
+   GWEN BALLESTEROS — SHARED STYLES (PROTOTYPE)
+   Used by all new multi-page additions. Edit tokens here
+   to retune the entire site palette + scale.
+========================================================== */
+:root {
+  --c-text:        #1a1612;
+  --c-bg:          #f4ede0;
+  --c-surface:     #ebe1cf;
+  --c-accent:      #c2410c;
+  --c-accent-soft: rgba(194, 65, 12, 0.10);
+  --c-line:        rgba(26, 22, 18, 0.16);
+  --c-line-strong: rgba(26, 22, 18, 0.42);
+  --c-muted:       rgba(26, 22, 18, 0.58);
+  --c-dark:        #1a1612;
+  --c-dark-text:   #f4ede0;
+  --c-dark-muted:  rgba(244, 237, 224, 0.55);
+  --c-dark-line:   rgba(244, 237, 224, 0.18);
+
+  --f-display: 'Instrument Serif', 'Times New Roman', Georgia, serif;
+  --f-body:    'Manrope', system-ui, -apple-system, sans-serif;
+  --f-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --max-w:     1280px;
+  --pad-x:     2rem;
+  --radius:    2px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--c-text);
+  background: var(--c-bg);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image:
+    radial-gradient(rgba(26, 22, 18, 0.045) 1px, transparent 1px),
+    radial-gradient(rgba(26, 22, 18, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px, 7px 7px;
+  background-position: 0 0, 16px 16px;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--c-accent); color: var(--c-bg); }
+
+.container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x); }
+.eyebrow {
+  font-family: var(--f-mono); font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.16em; font-weight: 500; color: var(--c-muted);
+}
+.section-label {
+  font-family: var(--f-mono); font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.22em; color: var(--c-accent); font-weight: 600;
+}
+.display { font-family: var(--f-display); font-weight: 400; line-height: 0.96; letter-spacing: -0.015em; }
+
+/* ==========================================
+   MASTHEAD (sticky top nav)
+========================================== */
+.masthead {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(244, 237, 224, 0.92);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--c-line);
+}
+.masthead-inner {
+  display: grid; grid-template-columns: auto 1fr auto;
+  align-items: center; gap: 2rem;
+  padding: 0.85rem var(--pad-x);
+  max-width: var(--max-w); margin: 0 auto;
+}
+.brandmark {
+  font-family: var(--f-display); font-size: 1.45rem;
+  letter-spacing: -0.01em;
+  display: flex; align-items: baseline; gap: 0.5rem;
+}
+.brandmark .mark-meta {
+  font-family: var(--f-mono); font-size: 0.68rem;
+  text-transform: uppercase; letter-spacing: 0.18em; color: var(--c-muted);
+}
+.nav-links {
+  display: flex; justify-content: center; gap: 1.6rem;
+  font-size: 0.86rem; font-weight: 500;
+}
+.nav-links a {
+  position: relative; padding: 0.25rem 0;
+  transition: color 200ms ease;
+}
+.nav-links a::after {
+  content: ''; position: absolute; left: 0; bottom: -2px;
+  width: 0; height: 1px; background: var(--c-accent);
+  transition: width 250ms ease;
+}
+.nav-links a:hover { color: var(--c-accent); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.current { color: var(--c-accent); }
+.nav-links a.current::after { width: 100%; }
+
+.availability {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--f-mono); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.14em; color: var(--c-text);
+  white-space: nowrap;
+}
+.availability::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.6);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.55); }
+  50% { box-shadow: 0 0 0 7px rgba(22, 163, 74, 0); }
+}
+
+/* ==========================================
+   PAGE HEADER (per-page hero)
+========================================== */
+.page-header {
+  padding: 5rem 0 4rem;
+  border-bottom: 1px solid var(--c-line);
+}
+.page-meta {
+  display: flex; gap: 1.5rem; align-items: baseline;
+  margin-bottom: 2.5rem;
+  font-family: var(--f-mono); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.16em;
+  color: var(--c-muted);
+}
+.page-meta .crumb { color: var(--c-accent); }
+.page-meta a:hover { color: var(--c-accent); }
+.page-title {
+  font-family: var(--f-display);
+  font-size: clamp(2.6rem, 7vw, 5.8rem);
+  line-height: 1; letter-spacing: -0.02em; font-weight: 400;
+  margin: 0 0 1.5rem; max-width: 18ch;
+}
+.page-title em { color: var(--c-accent); font-style: italic; }
+.page-lead {
+  font-size: 1.15rem; line-height: 1.65; color: var(--c-text);
+  max-width: 60ch; margin: 0 0 1rem;
+}
+
+/* ==========================================
+   ARTICLE BODY
+========================================== */
+.article {
+  padding: 4rem 0 5rem;
+  max-width: 760px; margin: 0 auto;
+}
+.article > * + * { margin-top: 1.4rem; }
+.article p {
+  font-size: 1.12rem; line-height: 1.78; margin: 1.4rem 0;
+  color: var(--c-text);
+}
+.article h2 {
+  font-family: var(--f-display); font-size: 2.1rem;
+  font-weight: 400; line-height: 1.15; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem;
+}
+.article h2 em { color: var(--c-accent); font-style: italic; }
+.article h3 {
+  font-family: var(--f-display); font-size: 1.5rem;
+  font-weight: 400; line-height: 1.2; margin: 2.2rem 0 0.8rem;
+}
+.article ul, .article ol {
+  font-size: 1.08rem; line-height: 1.7; padding-left: 1.6rem;
+}
+.article ul li, .article ol li { margin: 0.5rem 0; }
+.article blockquote {
+  font-family: var(--f-display);
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  line-height: 1.25; font-style: italic;
+  border-top: 1px solid var(--c-line-strong);
+  border-bottom: 1px solid var(--c-line-strong);
+  padding: 2rem 0; margin: 2.5rem 0;
+}
+.article blockquote::before { content: '“'; color: var(--c-accent); margin-right: 0.15em; }
+.article blockquote::after { content: '”'; color: var(--c-accent); }
+.article .drop-cap p:first-of-type::first-letter {
+  font-family: var(--f-display); font-size: 5rem;
+  float: left; line-height: 0.8; padding: 0.4rem 0.7rem 0 0;
+  color: var(--c-accent); font-style: italic;
+}
+.article hr {
+  border: 0; height: 1px; background: var(--c-line);
+  margin: 3rem 0;
+}
+
+/* ==========================================
+   CARDS + LISTS (cross-page reusable)
+========================================== */
+.editorial-section { padding: 4rem 0; }
+.section-head {
+  display: grid; grid-template-columns: 1fr 3fr;
+  gap: 3rem; margin-bottom: 3rem;
+  align-items: end; padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--c-line-strong);
+}
+.section-head h2 {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1; letter-spacing: -0.02em; font-weight: 400; margin: 0;
+}
+.section-head h2 em { color: var(--c-accent); font-style: italic; }
+
+.card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--c-line); border: 1px solid var(--c-line); }
+.card-grid > * { background: var(--c-bg); padding: 2rem; transition: background 220ms ease; }
+.card-grid > *:hover { background: var(--c-surface); }
+
+.feature-card { padding: 2.4rem; border: 1px solid var(--c-line); transition: background 220ms ease, transform 220ms ease; }
+.feature-card:hover { background: var(--c-surface); transform: translateY(-2px); }
+.feature-card h3 {
+  font-family: var(--f-display); font-size: 1.7rem; font-weight: 400;
+  margin: 0 0 0.8rem; line-height: 1.1;
+}
+.feature-card h3 em { color: var(--c-accent); font-style: italic; }
+.feature-card p { margin: 0 0 1rem; color: var(--c-text); }
+.feature-card .card-num {
+  font-family: var(--f-mono); font-size: 0.7rem; color: var(--c-accent);
+  letter-spacing: 0.16em; display: block; margin-bottom: 0.8rem;
+}
+
+/* ==========================================
+   BUTTONS / CTAs
+========================================== */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.95rem 1.5rem;
+  background: var(--c-text); color: var(--c-bg);
+  font-family: var(--f-mono); font-size: 0.76rem;
+  text-transform: uppercase; letter-spacing: 0.16em; font-weight: 500;
+  border: 1px solid var(--c-text); border-radius: var(--radius);
+  transition: all 220ms ease; cursor: pointer;
+}
+.btn:hover { background: var(--c-accent); border-color: var(--c-accent); transform: translateY(-2px); }
+.btn .arrow { transition: transform 220ms ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+.btn-ghost {
+  background: transparent; color: var(--c-text);
+  border-color: var(--c-line-strong);
+}
+.btn-ghost:hover { background: var(--c-text); color: var(--c-bg); border-color: var(--c-text); }
+
+/* ==========================================
+   FOOTER
+========================================== */
+.footer { padding: 4rem 0 2rem; border-top: 1px solid var(--c-line); margin-top: 5rem; }
+.footer-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1.4fr; gap: 3rem;
+  padding-bottom: 2rem; margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--c-line);
+}
+.foot-col .foot-label {
+  font-family: var(--f-mono); font-size: 0.68rem;
+  text-transform: uppercase; letter-spacing: 0.18em; color: var(--c-accent);
+  display: block; margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem; border-bottom: 1px solid var(--c-line);
+}
+.foot-col ul { list-style: none; margin: 0; padding: 0; }
+.foot-col ul li { padding: 0.25rem 0; }
+.foot-col ul li a {
+  font-family: var(--f-display); font-size: 1.1rem; color: var(--c-text);
+  transition: color 200ms ease;
+}
+.foot-col ul li a:hover { color: var(--c-accent); }
+.foot-col p { font-size: 0.92rem; line-height: 1.55; color: var(--c-text); margin: 0 0 0.85rem; max-width: 38ch; }
+.foot-bottom {
+  font-family: var(--f-mono); font-size: 0.7rem;
+  text-transform: uppercase; letter-spacing: 0.14em; color: var(--c-muted);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+@media (max-width: 900px) {
+  :root { --pad-x: 1.5rem; }
+  .masthead-inner {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+  }
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.8rem;
+    order: 2;
+  }
+  .brandmark { justify-self: center; }
+  .availability { justify-self: center; order: 3; }
+  .section-head { grid-template-columns: 1fr; gap: 1.5rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media (max-width: 600px) {
+  :root { --pad-x: 1.15rem; }
+  .page-header { padding: 3rem 0 2.5rem; }
+}
+
+
+/* =========================================================
+   UI POLISH UPGRADES — depth, motion, refinement
+========================================================== */
+
+/* Smooth scroll reveal — used across all pages */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 800ms ease, transform 800ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* Reading progress bar — fixed at top of articles */
+.read-progress {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 3px; background: rgba(26, 22, 18, 0.06);
+  z-index: 100; pointer-events: none;
+}
+.read-progress .bar {
+  height: 100%; background: var(--c-accent);
+  width: 0%; transition: width 100ms linear;
+}
+
+/* Improved card hover — depth via subtle shadow + accent border */
+.feature-card {
+  position: relative; overflow: hidden;
+  transition: background 240ms ease, transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+.feature-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background: var(--c-accent);
+  transform: scaleY(0); transform-origin: top;
+  transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.feature-card:hover {
+  background: var(--c-surface);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px -16px rgba(26, 22, 18, 0.18);
+  border-color: var(--c-line-strong);
+}
+.feature-card:hover::before { transform: scaleY(1); }
+
+.card-grid > * {
+  transition: background 240ms ease, transform 240ms ease, box-shadow 240ms ease;
+}
+.card-grid > *:hover {
+  background: var(--c-surface);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -12px rgba(26, 22, 18, 0.15);
+  z-index: 1; position: relative;
+}
+
+/* Featured article hero — for Notes index */
+.featured-article {
+  background: var(--c-text); color: var(--c-dark-text);
+  padding: 3.5rem 3rem;
+  border-radius: var(--radius);
+  margin-bottom: 4rem;
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1.6fr; gap: 3rem;
+  align-items: center;
+  transition: transform 320ms ease;
+  cursor: pointer;
+}
+.featured-article:hover { transform: translateY(-3px); }
+.featured-article::before {
+  content: 'FEATURED'; position: absolute;
+  top: 1.4rem; right: 2rem;
+  font-family: var(--f-mono); font-size: 0.68rem;
+  letter-spacing: 0.2em; color: var(--c-accent);
+}
+.featured-article .feat-badge {
+  font-family: var(--f-mono); font-size: 0.7rem;
+  text-transform: uppercase; letter-spacing: 0.18em;
+  color: var(--c-accent); margin-bottom: 1rem; display: block;
+}
+.featured-article h2 {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 4.4vw, 3.2rem);
+  line-height: 1.05; letter-spacing: -0.015em;
+  font-weight: 400; margin: 0 0 1.2rem;
+}
+.featured-article h2 em { color: var(--c-accent); font-style: italic; }
+.featured-article p {
+  color: var(--c-dark-text); opacity: 0.85;
+  font-size: 1.05rem; line-height: 1.65; margin: 0 0 1.5rem;
+}
+.featured-article .feat-meta {
+  font-family: var(--f-mono); font-size: 0.66rem;
+  text-transform: uppercase; letter-spacing: 0.16em;
+  color: var(--c-dark-muted);
+}
+.featured-article .feat-side {
+  text-align: left;
+}
+.featured-article .feat-side .num {
+  font-family: var(--f-display); font-size: 8rem;
+  line-height: 1; color: var(--c-accent);
+  font-style: italic; font-weight: 400;
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .featured-article { grid-template-columns: 1fr; padding: 2.5rem 1.6rem; }
+  .featured-article .feat-side .num { font-size: 5rem; }
+}
+
+/* Engagement tier cards — for service deep-dive pages */
+.tier-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem; margin: 3rem 0;
+}
+.tier-card {
+  border: 1px solid var(--c-line-strong);
+  background: var(--c-bg);
+  padding: 2.4rem 1.8rem;
+  position: relative;
+  transition: transform 240ms ease, box-shadow 240ms ease, background 240ms ease;
+}
+.tier-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px -16px rgba(26, 22, 18, 0.18);
+}
+.tier-card.featured {
+  background: var(--c-text); color: var(--c-dark-text);
+  border-color: var(--c-text);
+}
+.tier-card.featured .tier-name,
+.tier-card.featured .tier-price { color: var(--c-bg); }
+.tier-card.featured .tier-cents { color: var(--c-accent); }
+.tier-card .tier-badge {
+  position: absolute; top: -10px; left: 1.6rem;
+  background: var(--c-accent); color: var(--c-bg);
+  padding: 0.2rem 0.65rem; font-family: var(--f-mono);
+  font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
+}
+.tier-card .tier-name {
+  font-family: var(--f-mono); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.2em;
+  color: var(--c-accent); margin: 0 0 1rem; font-weight: 500;
+}
+.tier-card .tier-headline {
+  font-family: var(--f-display); font-size: 1.5rem;
+  line-height: 1.1; font-weight: 400; margin: 0 0 1.25rem;
+}
+.tier-card .tier-headline em { color: var(--c-accent); font-style: italic; }
+.tier-card ul {
+  list-style: none; padding: 0; margin: 0 0 1.5rem;
+}
+.tier-card ul li {
+  padding: 0.55rem 0; font-size: 0.94rem;
+  border-top: 1px solid var(--c-line);
+  position: relative; padding-left: 1.25rem;
+}
+.tier-card.featured ul li { border-top-color: var(--c-dark-line); }
+.tier-card ul li::before {
+  content: '·'; color: var(--c-accent);
+  position: absolute; left: 0;
+  font-weight: 700; font-size: 1.4rem; line-height: 1; top: 0.55rem;
+}
+@media (max-width: 800px) { .tier-grid { grid-template-columns: 1fr; } }
+
+/* Resource cards — better visual hierarchy with category icons */
+.resource-card {
+  background: var(--c-bg);
+  border: 1px solid var(--c-line);
+  padding: 2.2rem 1.8rem;
+  display: flex; flex-direction: column; gap: 0.85rem;
+  position: relative;
+  transition: transform 240ms ease, box-shadow 240ms ease, background 240ms ease, border-color 240ms ease;
+}
+.resource-card:hover {
+  transform: translateY(-3px);
+  background: var(--c-surface);
+  border-color: var(--c-line-strong);
+  box-shadow: 0 12px 32px -16px rgba(26, 22, 18, 0.18);
+}
+.resource-card .res-icon {
+  width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--c-accent); color: var(--c-bg);
+  border-radius: var(--radius);
+  font-family: var(--f-display); font-size: 1.4rem; font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* Sticky table of contents — for long articles */
+.toc {
+  position: sticky; top: 8rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  border-left: 1px solid var(--c-line); padding-left: 1.25rem;
+}
+.toc .toc-label {
+  color: var(--c-accent); margin-bottom: 1rem; display: block;
+  font-weight: 600;
+}
+.toc ul { list-style: none; padding: 0; margin: 0; }
+.toc ul li { padding: 0.45rem 0; }
+.toc ul li a {
+  color: var(--c-muted); transition: color 200ms ease, padding-left 200ms ease;
+  display: block;
+}
+.toc ul li a:hover { color: var(--c-accent); padding-left: 0.3rem; }
+
+/* Glossary search input */
+.gloss-search {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--c-bg); padding: 1.5rem 0;
+  border-bottom: 1px solid var(--c-line-strong);
+  margin-bottom: 2rem;
+}
+.gloss-search input {
+  width: 100%; max-width: 480px;
+  background: transparent;
+  border: 0; border-bottom: 1px solid var(--c-line-strong);
+  padding: 0.75rem 0; font-family: var(--f-body);
+  font-size: 1.1rem; color: var(--c-text); outline: none;
+  transition: border-color 200ms ease;
+}
+.gloss-search input:focus { border-bottom-color: var(--c-accent); }
+.gloss-search input::placeholder { color: var(--c-muted); font-style: italic; }
+.term.hidden { display: none; }
+
+/* Article share / footer */
+.article-meta-bar {
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 1.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+  margin: 3rem 0;
+  font-family: var(--f-mono); font-size: 0.7rem;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--c-muted);
+}
+.article-meta-bar .share-links { display: flex; gap: 1.25rem; }
+.article-meta-bar .share-links a { transition: color 200ms ease; }
+.article-meta-bar .share-links a:hover { color: var(--c-accent); }
+
+/* Article navigation prev/next */
+.article-nav {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: var(--c-line);
+  border: 1px solid var(--c-line);
+  margin-top: 3rem;
+}
+.article-nav a {
+  background: var(--c-bg); padding: 2rem;
+  display: block; transition: background 240ms ease;
+}
+.article-nav a:hover { background: var(--c-surface); }
+.article-nav .anav-label {
+  font-family: var(--f-mono); font-size: 0.66rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--c-accent); display: block; margin-bottom: 0.6rem;
+}
+.article-nav .anav-title {
+  font-family: var(--f-display); font-size: 1.2rem;
+  line-height: 1.2; font-weight: 400; font-style: italic;
+}
+.article-nav .next { text-align: right; }
+@media (max-width: 700px) { .article-nav { grid-template-columns: 1fr; } }
+
+/* Better focus states for accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 3px;
+}
+
+/* Industry stats inline */
+.inline-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin: 3rem 0;
+  border-top: 1px solid var(--c-line-strong);
+  border-bottom: 1px solid var(--c-line-strong);
+  padding: 2rem 0;
+}
+.inline-stat { padding: 0 1.5rem; border-right: 1px solid var(--c-line); text-align: left; }
+.inline-stat:last-child { border-right: 0; }
+.inline-stat:first-child { padding-left: 0; }
+.inline-stat .istat-num {
+  font-family: var(--f-display); font-size: 2.6rem;
+  line-height: 1; letter-spacing: -0.02em; font-weight: 400;
+  margin: 0 0 0.4rem; color: var(--c-text);
+}
+.inline-stat .istat-num em { color: var(--c-accent); font-style: italic; }
+.inline-stat .istat-label {
+  font-family: var(--f-mono); font-size: 0.62rem;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--c-muted);
+}
+@media (max-width: 700px) {
+  .inline-stats { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 0; }
+  .inline-stat:nth-child(2) { border-right: 0; }
+  .inline-stat .istat-num { font-size: 2rem; }
+}
+
+
+/* =========================================================
+   POLISH PASS 2 — heroes, ornaments, refinement
+========================================================== */
+
+/* Page header — asymmetric with decorative numeral */
+.page-header.with-numeral {
+  display: grid; grid-template-columns: 5fr 2fr; gap: 3rem;
+  align-items: end;
+}
+.page-header .ph-numeral {
+  font-family: var(--f-display); font-style: italic;
+  font-size: clamp(8rem, 22vw, 18rem);
+  line-height: 0.85; color: var(--c-accent);
+  text-align: right; opacity: 0.9; margin: 0;
+  letter-spacing: -0.05em;
+  user-select: none;
+}
+@media (max-width: 800px) {
+  .page-header.with-numeral { grid-template-columns: 1fr; }
+  .page-header .ph-numeral { text-align: left; font-size: 7rem; opacity: 0.5; margin-top: 1rem; }
+}
+
+/* Editorial section divider — accent dot row */
+.divider-marks {
+  display: flex; gap: 0.7rem;
+  justify-content: center;
+  padding: 3rem 0;
+}
+.divider-marks span {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--c-accent); opacity: 0.6;
+}
+.divider-marks span:nth-child(2) { opacity: 1; transform: scale(1.4); }
+.divider-marks span:nth-child(3) { opacity: 0.6; }
+
+/* Section header upgrade — large running number */
+.section-head .section-num {
+  font-family: var(--f-display); font-style: italic;
+  font-size: 5rem; line-height: 0.85;
+  color: var(--c-accent); display: block;
+  margin-bottom: -0.5rem; letter-spacing: -0.04em;
+}
+
+/* Article author byline at top */
+.article-byline {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1.5rem 0; margin-bottom: 2rem;
+  border-bottom: 1px solid var(--c-line);
+  font-family: var(--f-mono); font-size: 0.74rem;
+  text-transform: uppercase; letter-spacing: 0.14em;
+  color: var(--c-muted);
+}
+.article-byline .ab-mark {
+  width: 36px; height: 36px;
+  background: var(--c-accent); color: var(--c-bg);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-display); font-style: italic;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.article-byline .ab-name { color: var(--c-text); font-weight: 600; }
+
+/* Author bio block at end of articles */
+.author-bio {
+  display: grid; grid-template-columns: 60px 1fr; gap: 1.5rem;
+  padding: 2.5rem; background: var(--c-surface);
+  border-radius: var(--radius); margin: 3rem 0;
+  align-items: start;
+}
+.author-bio .bio-mark {
+  width: 60px; height: 60px;
+  background: var(--c-accent); color: var(--c-bg);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-display); font-style: italic;
+  font-size: 2rem;
+}
+.author-bio h4 {
+  font-family: var(--f-display); font-size: 1.4rem;
+  font-weight: 400; line-height: 1.1; margin: 0 0 0.5rem;
+}
+.author-bio h4 em { color: var(--c-accent); font-style: italic; }
+.author-bio p {
+  font-size: 0.96rem; line-height: 1.6;
+  margin: 0 0 1rem; color: var(--c-text);
+}
+.author-bio .bio-links {
+  display: flex; gap: 1.5rem;
+  font-family: var(--f-mono); font-size: 0.7rem;
+  text-transform: uppercase; letter-spacing: 0.16em;
+}
+.author-bio .bio-links a { color: var(--c-accent); }
+.author-bio .bio-links a:hover { text-decoration: underline; }
+
+/* Newsletter inline CTA — used between sections or end of articles */
+.newsletter-inline {
+  background: var(--c-text); color: var(--c-dark-text);
+  padding: 3rem 2.5rem; border-radius: var(--radius);
+  margin: 3rem 0; position: relative; overflow: hidden;
+}
+.newsletter-inline::before {
+  content: '✉'; position: absolute;
+  top: 1rem; right: 1.5rem;
+  font-size: 4rem; color: var(--c-accent);
+  opacity: 0.18; line-height: 1;
+}
+.newsletter-inline h4 {
+  font-family: var(--f-display); font-size: 1.85rem;
+  line-height: 1.1; font-weight: 400; margin: 0 0 0.75rem;
+  max-width: 22ch;
+}
+.newsletter-inline h4 em { color: var(--c-accent); font-style: italic; }
+.newsletter-inline p {
+  font-size: 1rem; opacity: 0.85; margin: 0 0 1.5rem;
+  max-width: 50ch;
+}
+.newsletter-inline form {
+  display: flex; gap: 0.75rem; max-width: 460px; flex-wrap: wrap;
+}
+.newsletter-inline input[type="email"] {
+  flex: 1; min-width: 200px;
+  background: transparent; border: 0;
+  border-bottom: 1px solid var(--c-dark-line);
+  color: var(--c-dark-text); padding: 0.7rem 0;
+  font-family: var(--f-body); font-size: 1rem;
+  outline: none; transition: border-color 200ms ease;
+}
+.newsletter-inline input[type="email"]:focus { border-bottom-color: var(--c-accent); }
+.newsletter-inline button {
+  background: var(--c-accent); border: 1px solid var(--c-accent);
+  color: var(--c-bg); padding: 0.7rem 1.4rem;
+  font-family: var(--f-mono); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.14em; font-weight: 500;
+  cursor: pointer; transition: all 200ms ease;
+}
+.newsletter-inline button:hover { background: var(--c-bg); color: var(--c-text); }
+
+/* Closing CTA block — refined version */
+.cta-final {
+  background: var(--c-text); color: var(--c-dark-text);
+  padding: 5rem 3rem; margin-top: 4rem;
+  border-radius: var(--radius);
+  position: relative; overflow: hidden;
+}
+.cta-final::before {
+  content: ''; position: absolute;
+  top: -50px; right: -50px;
+  width: 240px; height: 240px;
+  background: var(--c-accent); border-radius: 50%;
+  opacity: 0.14; filter: blur(40px);
+}
+.cta-final h3 {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05; font-weight: 400; margin: 0 0 1.5rem;
+  max-width: 22ch; position: relative;
+}
+.cta-final h3 em { color: var(--c-accent); font-style: italic; }
+.cta-final p {
+  font-size: 1.08rem; line-height: 1.65;
+  max-width: 56ch; margin: 0 0 2rem; opacity: 0.85;
+  position: relative;
+}
+.cta-final .btn {
+  background: var(--c-accent); border-color: var(--c-accent);
+  color: var(--c-bg); position: relative;
+}
+.cta-final .btn:hover { background: var(--c-bg); color: var(--c-text); border-color: var(--c-bg); }
+
+/* Page-load fade-in (whole page) */
+@keyframes pageFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+body { animation: pageFadeIn 600ms ease-out; }
+
+/* Smoother link transitions */
+a { transition: color 200ms ease; }
+
+/* Tighter article opening — more editorial */
+.article > .container > p:first-of-type {
+  font-size: 1.18rem;
+  line-height: 1.75;
+}
+.article > .container > p:first-of-type::first-letter {
+  font-family: var(--f-display); font-size: 5.5rem;
+  float: left; line-height: 0.78;
+  padding: 0.4rem 0.85rem 0 0;
+  color: var(--c-accent); font-style: italic;
+}
+
+/* Better blockquote style */
+.article blockquote {
+  font-size: clamp(1.6rem, 3vw, 2.3rem) !important;
+  position: relative;
+}
+.article blockquote::before {
+  content: '"'; font-size: 5rem;
+  position: absolute; top: -1rem; left: -2.5rem;
+  color: var(--c-accent); opacity: 0.6;
+  font-family: var(--f-display);
+  line-height: 1;
+}
+@media (max-width: 700px) {
+  .article blockquote::before { display: none; }
+  .article blockquote::after { display: none; }
+}
+
+</style>
+<style>
+  .notes-list { list-style: none; margin: 0; padding: 0; }
+  .note-entry {
+    display: grid; grid-template-columns: 4rem 1fr 9rem;
+    gap: 2.5rem; padding: 2.5rem 0;
+    border-top: 1px solid var(--c-line);
+    align-items: start; transition: padding 220ms ease;
+    cursor: pointer;
+  }
+  .note-entry:last-child { border-bottom: 1px solid var(--c-line); }
+  .note-entry:hover { padding-left: 1rem; }
+  .note-entry .nnum {
+    font-family: var(--f-mono); font-size: 0.72rem;
+    letter-spacing: 0.18em; color: var(--c-accent);
+    font-weight: 500; padding-top: 0.55rem;
+  }
+  .note-entry h3 {
+    font-family: var(--f-display);
+    font-size: clamp(1.55rem, 3vw, 2.2rem);
+    line-height: 1.1; font-weight: 400; margin: 0 0 0.7rem;
+    font-style: italic; letter-spacing: -0.005em;
+    transition: color 220ms ease;
+  }
+  .note-entry:hover h3 { color: var(--c-accent); }
+  .note-entry .nteaser {
+    font-size: 1rem; line-height: 1.6;
+    margin: 0 0 1rem; color: var(--c-muted); max-width: 58ch;
+  }
+  .note-entry a.read-more {
+    font-family: var(--f-mono); font-size: 0.7rem;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--c-accent); transition: padding-left 200ms ease;
+    display: inline-block;
+  }
+  .note-entry:hover a.read-more { padding-left: 0.4rem; }
+  .note-entry .nside {
+    display: flex; flex-direction: column; gap: 0.45rem;
+    text-align: right; padding-top: 0.55rem;
+  }
+  .note-entry .ncat {
+    font-family: var(--f-mono); font-size: 0.68rem;
+    text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--c-accent); font-weight: 500;
+  }
+  .note-entry .nstatus {
+    font-family: var(--f-mono); font-size: 0.62rem;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--c-muted);
+  }
+  @media (max-width: 700px) {
+    .note-entry { grid-template-columns: 1fr; gap: 0.75rem; }
+    .note-entry .nside { text-align: left; flex-direction: row; gap: 1rem; padding-top: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="read-progress" aria-hidden="true"><div class="bar"></div></div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandmark">
+      <a href="/"><span>Gwen Ballesteros</span></a>
+      <span class="mark-meta">Vol. 01</span>
+    </div>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" class="current">Notes</a>
+      <a href="/services/renewals/">Services</a>
+      <a href="/industries/construction/">Industries</a>
+      <a href="/resources/">Resources</a>
+      <a href="/glossary/">Glossary</a>
+    </nav>
+    <span class="availability">Open to new engagements</span>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <div class="page-meta">
+      <a href="/">Home</a>
+      <span class="crumb">FIELD NOTES</span>
+    </div>
+    <h1 class="page-title">Working notes from <em>the desk.</em></h1>
+    <p class="page-lead">
+      Practical writing on commercial lines insurance, underwriting, account
+      management, and the quiet work behind every bound policy. Written for
+      account managers, agency owners, and anyone who wants the craft side of
+      insurance, not the trade-press version.
+    </p>
+  </div>
+</section>
+
+<section class="editorial-section">
+  <div class="container">
+    <a class="featured-article reveal" href="/notes/reading-a-loss-run/" style="display:grid;text-decoration:none;color:inherit;">
+        <div class="feat-side">
+          <span class="num">01</span>
+        </div>
+        <div>
+          <span class="feat-badge">Featured · Underwriting</span>
+          <h2>Reading a loss run without <em>flinching.</em></h2>
+          <p>What three years of underwriting taught me about the stories loss runs tell, and the ones they hide. A practical reader's guide for account managers who want to think like an underwriter does.</p>
+          <span class="feat-meta">Published &nbsp;·&nbsp; 7 min read &nbsp;·&nbsp; May 2026</span>
+        </div>
+      </a>
+
+      <ul class="notes-list reveal">
+
+      <li class="note-entry">
+        <span class="nnum">N° 02</span>
+        <div>
+          <h3>What MGAs see that retail agents don't.</h3>
+          <p class="nteaser">Three years across both sides of the placement table. The patterns you can't see from one chair, and why agencies that understand both move faster on hard-to-place risks.</p>
+          <a class="read-more" href="#">Forthcoming →</a>
+        </div>
+        <div class="nside">
+          <span class="ncat">Industry</span>
+          <span class="nstatus">In Draft</span>
+        </div>
+      </li>
+
+      <li class="note-entry">
+        <span class="nnum">N° 03</span>
+        <div>
+          <h3>SOPs that account managers actually use.</h3>
+          <p class="nteaser">The difference between a binder of policies that gets ignored and a workflow that runs itself. Notes from authoring SOPs that survive contact with a busy desk.</p>
+          <a class="read-more" href="#">Forthcoming →</a>
+        </div>
+        <div class="nside">
+          <span class="ncat">Operations</span>
+          <span class="nstatus">In Draft</span>
+        </div>
+      </li>
+
+      <li class="note-entry">
+        <span class="nnum">N° 04</span>
+        <div>
+          <h3>The quiet discipline of renewal prep.</h3>
+          <p class="nteaser">The renewal that closes on time started ninety days ago. What that work actually looks like, and why retention follows from it.</p>
+          <a class="read-more" href="#">Forthcoming →</a>
+        </div>
+        <div class="nside">
+          <span class="ncat">Account Management</span>
+          <span class="nstatus">Forthcoming</span>
+        </div>
+      </li>
+
+      <li class="note-entry">
+        <span class="nnum">N° 05</span>
+        <div>
+          <h3>Certificates of insurance, a field guide.</h3>
+          <p class="nteaser">Every COI looks the same until it doesn't. A working glossary of the moments that matter: additional insureds, waivers of subrogation, and the quiet language of compliance.</p>
+          <a class="read-more" href="#">Forthcoming →</a>
+        </div>
+        <div class="nside">
+          <span class="ncat">Coverage</span>
+          <span class="nstatus">Forthcoming</span>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+
+<section class="editorial-section">
+  <div class="container">
+    <div class="newsletter-inline reveal">
+      <h4>One short email, once a <em>month.</em></h4>
+      <p>New Field Notes, practical insurance reading, and notes from the desk. About four minutes to read. No fluff. Unsubscribe anytime.</p>
+      <form onsubmit="event.preventDefault(); alert('Newsletter signup: connect Buttondown or ConvertKit to enable.')">
+        <input type="email" placeholder="your@email.com" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="foot-col">
+        <span class="foot-label">Connect</span>
+        <ul>
+          <li><a href="mailto:gballesteros.info@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/gwenballesteros" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="/#contact">Send a message</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <span class="foot-label">Sections</span>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services/renewals/">Services</a></li>
+          <li><a href="/industries/construction/">Industries</a></li>
+          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/glossary/">Glossary</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <span class="foot-label">Colophon</span>
+        <p>Set in Instrument Serif and Manrope, with JetBrains Mono for technical accents. Hand-built as a single self-contained page. No trackers, no frameworks.</p>
+        <span style="font-family:var(--f-mono);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--c-muted);">U.S. · Philippines (Remote) · PHT (UTC+8)</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Gwen Ballesteros · All rights reserved</span>
+      <span>Volume 01. Insurance, considered.</span>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else { els.forEach(function (el) { el.classList.add('in'); }); }
+
+  var bar = document.querySelector('.read-progress .bar');
+  if (bar) {
+    function updateBar() {
+      var h = document.documentElement;
+      var scroll = h.scrollTop;
+      var height = h.scrollHeight - h.clientHeight;
+      bar.style.width = (height > 0 ? (scroll / height * 100) : 0) + '%';
+    }
+    window.addEventListener('scroll', updateBar, { passive: true });
+    updateBar();
+  }
+})();
+</script>
+
+</body>
+</html>

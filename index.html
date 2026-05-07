@@ -1297,8 +1297,18 @@ section.editorial {
 ========================================================== */
 @media (max-width: 900px) {
   :root { --pad-x: 1.5rem; --pad-y-sec: 5rem; }
-  .masthead-inner { grid-template-columns: 1fr auto; }
-  .nav-links { display: none; }
+  .masthead-inner {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    padding: 0.85rem 1rem;
+  }
+  .nav-links {
+    display: flex; justify-content: center;
+    flex-wrap: wrap; gap: 1rem;
+    font-size: 0.8rem; order: 2;
+  }
+  .brandmark { justify-self: center; }
+  .availability { justify-self: center; order: 3; }
   .hero-meta { grid-template-columns: repeat(2, 1fr); }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-aside { position: static; }
@@ -1376,10 +1386,11 @@ section.editorial {
       <span class="mark-meta">Vol. 01</span>
     </div>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#capabilities">Capabilities</a>
-      <a href="#portfolio">Experience</a>
-      <a href="#notes">Field Notes</a>
+      <a href="/notes/">Notes</a>
+      <a href="/services/renewals/">Services</a>
+      <a href="/industries/construction/">Industries</a>
+      <a href="/resources/">Resources</a>
+      <a href="/glossary/">Glossary</a>
       <a href="#contact">Contact</a>
     </nav>
     <span class="availability" aria-label="Availability">Open to new engagements</span>
