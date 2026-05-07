@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Gwen Ballesteros — Commercial Lines account manager and underwriting support for U.S. agencies, brokerages, and MGAs. Working across construction, restaurant, and real estate accounts." />
+<title>Gwen Ballesteros — Commercial Lines Specialist</title>
+
+<!-- =========================================================
+     GOOGLE FONTS
+     Display:  Instrument Serif (editorial headlines, italics)
+     Body:     Manrope (clean, modern, highly readable)
+     Mono:     JetBrains Mono (labels, dates, technical accents)
+========================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+/* =========================================================
+   1. DESIGN TOKENS
+   Edit these to retune the entire site palette + scale.
+========================================================== */
+:root {
+  /* Color — warm, editorial, considered */
+  --c-text:        #1a1612;            /* Deep warm black — primary type */
+  --c-bg:          #f4ede0;            /* Warm cream — page background */
+  --c-surface:     #ebe1cf;            /* Secondary surface — cards/panels */
+  --c-accent:      #c2410c;            /* Burnt orange — emphasis, links */
+  --c-accent-soft: rgba(194, 65, 12, 0.10);
+  --c-line:        rgba(26, 22, 18, 0.16);   /* Hairline rules */
+  --c-line-strong: rgba(26, 22, 18, 0.42);
+  --c-muted:       rgba(26, 22, 18, 0.58);   /* Captions, meta */
+  --c-dark:        #1a1612;            /* Inverted sections */
+  --c-dark-soft:   #2a2520;
+  --c-dark-text:   #f4ede0;            /* Type on dark */
+  --c-dark-muted:  rgba(244, 237, 224, 0.55);
+  --c-dark-line:   rgba(244, 237, 224, 0.18);
+
+  /* Typography */
+  --f-display: 'Instrument Serif', 'Times New Roman', Georgia, serif;
+  --f-body:    'Manrope', system-ui, -apple-system, sans-serif;
+  --f-mono:    'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Layout */
+  --max-w:     1280px;                 /* Outer content cap */
+  --pad-x:     2rem;                   /* Horizontal page padding (desktop) */
+  --pad-y-sec: 7rem;                   /* Vertical section rhythm */
+  --radius:    2px;                    /* Sharp, editorial — not soft */
+}
+
+/* =========================================================
+   2. RESET + BASE
+========================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--c-text);
+  background: var(--c-bg);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+
+  /* Subtle paper-grain texture using stacked radial gradients */
+  background-image:
+    radial-gradient(rgba(26, 22, 18, 0.045) 1px, transparent 1px),
+    radial-gradient(rgba(26, 22, 18, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px, 7px 7px;
+  background-position: 0 0, 16px 16px;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+/* Selection styling — small touch, big personality */
+::selection { background: var(--c-accent); color: var(--c-bg); }
+
+/* Reusable containers */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+}
+
+/* =========================================================
+   3. TYPOGRAPHY UTILITIES
+========================================================== */
+.eyebrow {
+  /* Small all-caps mono label — used above titles, in meta strips */
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  color: var(--c-muted);
+}
+.section-label {
+  /* Large running section number/name — magazine "Section 01" */
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--c-accent);
+  font-weight: 600;
+}
+.display {
+  font-family: var(--f-display);
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.015em;
+}
+.italic { font-style: italic; }
+
+/* Hairline rule — used liberally for editorial structure */
+.rule {
+  height: 1px;
+  background: var(--c-line);
+  border: 0;
+  margin: 0;
+}
+
+/* =========================================================
+   4. MASTHEAD (sticky top nav)
+========================================================== */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(244, 237, 224, 0.92);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--c-line);
+}
+.masthead-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.85rem var(--pad-x);
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+.brandmark {
+  font-family: var(--f-display);
+  font-size: 1.45rem;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.brandmark .mark-meta {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--c-muted);
+}
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+.nav-links a {
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 200ms ease;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 1px;
+  background: var(--c-accent);
+  transition: width 250ms ease;
+}
+.nav-links a:hover { color: var(--c-accent); }
+.nav-links a:hover::after { width: 100%; }
+
+/* Availability dot — pulses softly */
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-text);
+  white-space: nowrap;
+}
+.availability::before {
+  content: '';
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.6);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.55); }
+  50%      { box-shadow: 0 0 0 7px rgba(22, 163, 74, 0); }
+}
+
+/* =========================================================
+   5. HERO
+========================================================== */
+.hero {
+  padding: 5rem 0 6rem;
+  position: relative;
+}
+.hero-meta {
+  /* Magazine masthead-style top strip: Volume | Location | Audience | Discipline */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  border-top: 1px solid var(--c-line-strong);
+  border-bottom: 1px solid var(--c-line);
+  padding: 1rem 0;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.hero-meta div span {
+  display: block;
+  color: var(--c-muted);
+  margin-bottom: 0.25rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+}
+.hero-meta div b {
+  font-weight: 600;
+  color: var(--c-text);
+  letter-spacing: 0.06em;
+}
+
+.hero-headline {
+  margin: 4rem 0 2.5rem;
+  font-family: var(--f-display);
+  font-size: clamp(3rem, 9.4vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  max-width: 14ch;
+}
+.hero-headline em {
+  color: var(--c-accent);
+  font-style: italic;
+}
+
+.hero-tagline {
+  max-width: 50ch;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--c-text);
+  margin: 0 0 2.75rem;
+}
+
+/* Credential badge row */
+.credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+.credential {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--c-line-strong);
+  border-radius: var(--radius);
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--c-text);
+  background: transparent;
+  transition: background 200ms ease, color 200ms ease;
+}
+.credential.in-progress { color: var(--c-muted); border-style: dashed; }
+.credential:hover { background: var(--c-text); color: var(--c-bg); }
+
+/* Hero stagger animation — each line rises and fades in */
+.rise { opacity: 0; transform: translateY(28px); }
+.rise.in {
+  opacity: 1; transform: translateY(0);
+  transition: opacity 800ms ease, transform 800ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* =========================================================
+   6. TICKER (full-bleed marquee)
+========================================================== */
+.ticker {
+  background: var(--c-text);
+  color: var(--c-bg);
+  border-top: 1px solid var(--c-text);
+  border-bottom: 1px solid var(--c-text);
+  overflow: hidden;
+  position: relative;
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 60s linear infinite;
+  padding: 1.4rem 0;
+  font-family: var(--f-display);
+  font-size: 1.65rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.ticker-track span { padding: 0 1.6rem; }
+.ticker-track .dot { color: var(--c-accent); padding: 0 0.4rem; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* =========================================================
+   6.5 STATS BAND — concrete numbers, post-hero credibility
+   Four stats divided by hairlines. Big display serif numbers
+   with a burnt-orange italic accent (the "+" mark, etc.).
+========================================================== */
+.stats-band {
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+  padding: 3.5rem 0;
+  background: rgba(235, 225, 207, 0.45);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.stat {
+  padding: 0 2.2rem;
+  border-right: 1px solid var(--c-line);
+}
+.stat:last-child  { border-right: 0; }
+.stat:first-child { padding-left: 0; }
+.stat-num {
+  font-family: var(--f-display);
+  font-size: clamp(3rem, 6.4vw, 5.4rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--c-text);
+  display: block;
+  margin-bottom: 0.85rem;
+}
+.stat-num em { color: var(--c-accent); font-style: italic; font-weight: 400; }
+.stat-label {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--c-muted);
+  display: block;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   7. SECTIONS — shared structure
+========================================================== */
+section.editorial {
+  padding: var(--pad-y-sec) 0;
+  position: relative;
+}
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: end;
+  border-bottom: 1px solid var(--c-line-strong);
+  padding-bottom: 2rem;
+}
+.section-head h2 {
+  font-family: var(--f-display);
+  font-size: clamp(2.5rem, 6vw, 5.25rem);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-weight: 400;
+}
+.section-head h2 em { color: var(--c-accent); font-style: italic; }
+.section-head .section-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* =========================================================
+   8. ABOUT (Section 01)
+========================================================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2.1fr;
+  gap: 4rem;
+}
+.about-aside {
+  /* Sidebar quick-facts */
+  position: sticky;
+  top: 8rem;
+  align-self: start;
+}
+.about-aside .aside-label {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--c-muted);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+.facts {
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.facts li {
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--c-line);
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  gap: 1rem;
+  font-size: 0.92rem;
+  align-items: baseline;
+}
+.facts li:last-child { border-bottom: 1px solid var(--c-line); }
+.facts li b {
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-muted);
+  font-weight: 500;
+}
+
+.about-prose p {
+  font-size: 1.12rem;
+  line-height: 1.72;
+  margin: 0 0 1.5rem;
+  color: var(--c-text);
+}
+/* Drop-cap on first paragraph of About */
+.about-prose p:first-of-type::first-letter {
+  font-family: var(--f-display);
+  font-size: 5.5rem;
+  float: left;
+  line-height: 0.8;
+  padding: 0.4rem 0.8rem 0 0;
+  color: var(--c-accent);
+  font-style: italic;
+}
+
+/* Pull quote in the middle of the prose */
+.pull-quote {
+  font-family: var(--f-display);
+  font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--c-text);
+  border-top: 1px solid var(--c-line-strong);
+  border-bottom: 1px solid var(--c-line-strong);
+  padding: 2.2rem 0;
+  margin: 2.5rem 0;
+  font-style: italic;
+}
+.pull-quote::before { content: '“'; color: var(--c-accent); margin-right: 0.15em; }
+.pull-quote::after  { content: '”'; color: var(--c-accent); }
+.pull-quote .attr {
+  display: block;
+  margin-top: 1rem;
+  font-family: var(--f-mono);
+  font-style: normal;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--c-muted);
+}
+
+/* =========================================================
+   9. CAPABILITIES (replaces "Services & Rates")
+   Marketing-as-hire, no rate cards.
+========================================================== */
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--c-line-strong);
+}
+.cap-card {
+  padding: 2.4rem 2rem 2.5rem;
+  border-bottom: 1px solid var(--c-line-strong);
+  border-right: 1px solid var(--c-line);
+  position: relative;
+  transition: background 250ms ease;
+}
+.cap-card:nth-child(3n) { border-right: 0; }
+.cap-card:hover { background: var(--c-surface); }
+.cap-card .cap-num {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--c-accent);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+.cap-card h3 {
+  font-family: var(--f-display);
+  font-size: 1.85rem;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 1rem;
+  font-weight: 400;
+}
+.cap-card h3 em { color: var(--c-accent); font-style: italic; }
+.cap-card p {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--c-text);
+  margin: 0;
+}
+
+/* Big capabilities CTA strip below grid */
+.cap-cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 3rem 0 0;
+  border-top: 0;
+}
+.cap-cta h3 {
+  font-family: var(--f-display);
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+  line-height: 1.1;
+  margin: 0;
+  font-weight: 400;
+}
+.cap-cta h3 em { color: var(--c-accent); font-style: italic; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.6rem;
+  background: var(--c-text);
+  color: var(--c-bg);
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  border: 1px solid var(--c-text);
+  border-radius: var(--radius);
+  transition: all 220ms ease;
+}
+.btn:hover { background: var(--c-accent); border-color: var(--c-accent); transform: translateY(-2px); }
+.btn .arrow { transition: transform 220ms ease; }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* =========================================================
+   10. CARRIERS + COVERAGE + TOOLS panel
+   Three columns of authoritative inventory, magazine-style.
+========================================================== */
+.inventory {
+  background: var(--c-surface);
+  border-top: 1px solid var(--c-line-strong);
+  border-bottom: 1px solid var(--c-line-strong);
+  padding: 5rem 0;
+  margin-top: 5rem;
+}
+.inv-carriers { margin-bottom: 4rem; }
+.inv-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+}
+.inv-col h4,
+.inv-carriers h4 {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--c-accent);
+  margin: 0 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--c-line-strong);
+}
+.inv-col ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  font-family: var(--f-display);
+  font-size: 1.4rem;
+  line-height: 1.45;
+  font-weight: 400;
+  letter-spacing: -0.005em;
+}
+.inv-col ul li {
+  padding: 0.25rem 0;
+}
+.inv-col ul li::before {
+  content: '— ';
+  color: var(--c-accent);
+}
+
+/* Carriers — editorial credit list
+   Two-column roll-call rendered in display serif, with mono numbering,
+   brand-colored accent dots, and short market-type tags. Hairlines
+   between rows; the row hover is a subtle slide + italic accent.
+   Each row's --brand custom property drives the accent dot color. */
+.carriers-roll {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--c-line-strong);
+  border-bottom: 1px solid var(--c-line-strong);
+}
+.carrier-row {
+  display: grid;
+  grid-template-columns: 2.4rem 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.35rem 1.5rem 1.35rem 0.5rem;
+  border-bottom: 1px solid var(--c-line);
+  position: relative;
+  transition: background 240ms ease, padding 240ms ease;
+}
+.carrier-row:nth-child(odd) {
+  border-right: 1px solid var(--c-line);
+  padding-right: 2rem;
+}
+.carrier-row:nth-child(even) {
+  padding-left: 2rem;
+}
+/* Strip the bottom rule on the final row of each column for a clean edge */
+.carrier-row:nth-last-child(-n+2) { border-bottom: 0; }
+.carrier-row:hover { background: var(--c-bg); padding-left: 1.25rem; }
+.carrier-row:nth-child(even):hover { padding-left: 2.75rem; }
+
+.carrier-row .num {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: var(--c-accent);
+  font-weight: 500;
+  align-self: baseline;
+  padding-top: 0.55rem;
+}
+.carrier-row .name-block {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+.carrier-row .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--brand, var(--c-accent));
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+  transition: transform 240ms ease;
+}
+.carrier-row:hover .dot {
+  transform: scale(1.4);
+}
+.carrier-row .name {
+  font-family: var(--f-display);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  line-height: 1.05;
+  margin: 0;
+  color: var(--c-text);
+  transition: color 200ms ease, font-style 200ms ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.carrier-row:hover .name {
+  color: var(--c-accent);
+  font-style: italic;
+}
+.carrier-row .meta {
+  font-family: var(--f-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   11. PORTFOLIO / EXPERIENCE (Section 03)
+========================================================== */
+.featured {
+  background: var(--c-text);
+  color: var(--c-bg);
+  padding: 4rem 3rem 4.5rem;
+  border-radius: var(--radius);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.featured::before {
+  /* Editorial corner mark */
+  content: 'FEATURED · 01';
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--c-accent);
+}
+.featured .feat-meta {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--c-dark-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.featured .feat-meta b {
+  color: var(--c-bg);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+.featured h3 {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  font-weight: 400;
+  margin: 0 0 1.5rem;
+}
+.featured h3 em { color: var(--c-accent); font-style: italic; }
+.featured p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--c-dark-text);
+  opacity: 0.85;
+  max-width: 60ch;
+  margin: 0 0 1.5rem;
+}
+.featured .tags {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+}
+.featured .tag {
+  border: 1px solid var(--c-dark-line);
+  padding: 0.35rem 0.7rem;
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-dark-text);
+}
+
+/* Editorial project list */
+.projects-list { list-style: none; margin: 0; padding: 0; }
+.proj {
+  display: grid;
+  grid-template-columns: 6rem 2fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--c-line);
+  transition: background 220ms ease, padding 220ms ease;
+}
+.proj:hover { background: var(--c-surface); padding-left: 1.5rem; padding-right: 1.5rem; }
+.proj:last-child { border-bottom: 1px solid var(--c-line); }
+.proj .proj-num {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--c-accent);
+  padding-top: 0.55rem;
+}
+.proj h3 {
+  font-family: var(--f-display);
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  margin: 0 0 0.65rem;
+}
+.proj h3 em { color: var(--c-accent); font-style: italic; }
+.proj p {
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--c-text);
+  margin: 0 0 1rem;
+  max-width: 52ch;
+}
+.proj .proj-tags {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+.proj .proj-tags span {
+  font-family: var(--f-mono);
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border: 1px solid var(--c-line-strong);
+  padding: 0.3rem 0.55rem;
+  color: var(--c-text);
+}
+.proj .proj-side {
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-muted);
+  text-align: right;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.proj .proj-side b { color: var(--c-text); font-weight: 500; letter-spacing: 0.08em; }
+
+/* =========================================================
+   12. FIELD NOTES (Section 04)
+========================================================== */
+.notes-list { list-style: none; margin: 0; padding: 0; }
+.note {
+  display: grid;
+  grid-template-columns: 4rem 1fr 9rem;
+  gap: 2.5rem;
+  padding: 2.4rem 0;
+  border-top: 1px solid var(--c-line);
+  align-items: start;
+  transition: padding 220ms ease;
+  cursor: pointer;
+}
+.note:last-child { border-bottom: 1px solid var(--c-line); }
+.note:hover { padding-left: 1rem; }
+.note:hover h3 { color: var(--c-accent); }
+.note .note-num {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--c-accent);
+  font-weight: 500;
+  padding-top: 0.55rem;
+}
+.note h3 {
+  font-family: var(--f-display);
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  line-height: 1.1;
+  font-weight: 400;
+  margin: 0 0 0.7rem;
+  font-style: italic;
+  letter-spacing: -0.005em;
+  transition: color 220ms ease;
+}
+.note .note-teaser {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin: 0;
+  color: var(--c-muted);
+  max-width: 58ch;
+}
+.note .note-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  text-align: right;
+  padding-top: 0.55rem;
+}
+.note .note-cat {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--c-accent);
+  font-weight: 500;
+}
+.note .note-status {
+  font-family: var(--f-mono);
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-muted);
+}
+
+/* =========================================================
+   13. CONTACT (Section 05) — inverted dark
+========================================================== */
+.contact {
+  background: var(--c-text);
+  color: var(--c-dark-text);
+  padding: var(--pad-y-sec) 0;
+  position: relative;
+  overflow: hidden;
+}
+.contact .section-head {
+  border-bottom-color: var(--c-dark-line);
+}
+.contact .section-head h2 em { color: var(--c-accent); }
+.contact .section-label { color: var(--c-accent); }
+
+.contact-intro {
+  font-family: var(--f-display);
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+  color: var(--c-dark-text);
+  max-width: 60ch;
+  margin: 0 0 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--c-dark-line);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+}
+
+/* Form */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.6rem;
+}
+.form-field label {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--c-dark-muted);
+  margin-bottom: 0.6rem;
+}
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--c-dark-line);
+  padding: 0.85rem 0;
+  color: var(--c-dark-text);
+  font-family: var(--f-body);
+  font-size: 1.05rem;
+  outline: none;
+  transition: border-color 200ms ease;
+  border-radius: 0;
+}
+.form-field textarea { resize: vertical; min-height: 120px; }
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus { border-bottom-color: var(--c-accent); }
+.form-field select option { background: var(--c-text); color: var(--c-dark-text); }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.contact .btn {
+  background: var(--c-accent);
+  border-color: var(--c-accent);
+  color: var(--c-bg);
+  margin-top: 1rem;
+}
+.contact .btn:hover { background: var(--c-bg); color: var(--c-text); border-color: var(--c-bg); }
+.form-status {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-accent);
+  margin-top: 1rem;
+  min-height: 1rem;
+}
+
+/* Sidebar contact info blocks */
+.contact-info { display: flex; flex-direction: column; gap: 1.6rem; }
+.info-block {
+  border-top: 1px solid var(--c-dark-line);
+  padding-top: 1.2rem;
+}
+.info-block:last-child { border-bottom: 1px solid var(--c-dark-line); padding-bottom: 1.2rem; }
+.info-block .info-label {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--c-dark-muted);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.info-block .info-val {
+  font-family: var(--f-display);
+  font-size: 1.45rem;
+  line-height: 1.25;
+  color: var(--c-dark-text);
+  letter-spacing: -0.005em;
+}
+.info-block a.info-val:hover { color: var(--c-accent); }
+
+/* =========================================================
+   14. FOOTER — full colophon treatment
+   • Large closing statement (display serif, italic accent)
+   • Three-column info grid: Connect / Sections / Colophon
+   • Bottom rule: copyright + tagline + back-to-top
+========================================================== */
+.footer {
+  padding: 6rem 0 2.5rem;
+  border-top: 1px solid var(--c-line);
+  position: relative;
+}
+.footer-statement {
+  border-bottom: 1px solid var(--c-line-strong);
+  padding-bottom: 4rem;
+  margin-bottom: 3.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 2rem;
+}
+.footer-statement h3 {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 5.4vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  margin: 0;
+  max-width: 16ch;
+}
+.footer-statement h3 em { color: var(--c-accent); font-style: italic; }
+.footer-statement .signoff {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--c-muted);
+  text-align: right;
+  white-space: nowrap;
+}
+.footer-statement .signoff b {
+  display: block;
+  color: var(--c-text);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  margin-top: 0.4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr;
+  gap: 3.5rem;
+  margin-bottom: 3rem;
+}
+.foot-col .foot-label {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--c-accent);
+  display: block;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--c-line);
+}
+.foot-col ul {
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.foot-col ul li { padding: 0.25rem 0; }
+.foot-col ul li a {
+  font-family: var(--f-display);
+  font-size: 1.2rem;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  color: var(--c-text);
+  transition: color 200ms ease, padding-left 200ms ease;
+  display: inline-block;
+}
+.foot-col ul li a:hover { color: var(--c-accent); padding-left: 0.4rem; }
+.foot-col p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--c-text);
+  margin: 0 0 0.85rem;
+  max-width: 38ch;
+}
+.foot-col .foot-location {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-muted);
+}
+
+.footer-rule {
+  border-top: 1px solid var(--c-line);
+  padding-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--c-muted);
+}
+.footer-rule .center { text-align: center; }
+.footer-rule .to-top {
+  text-align: right;
+  color: var(--c-text);
+  transition: color 200ms ease;
+}
+.footer-rule .to-top:hover { color: var(--c-accent); }
+
+/* =========================================================
+   15. SCROLL REVEAL
+========================================================== */
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity 900ms ease, transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* =========================================================
+   16. RESPONSIVE — 900px / 600px
+========================================================== */
+@media (max-width: 900px) {
+  :root { --pad-x: 1.5rem; --pad-y-sec: 5rem; }
+  .masthead-inner { grid-template-columns: 1fr auto; }
+  .nav-links { display: none; }
+  .hero-meta { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-aside { position: static; }
+  .capabilities-grid { grid-template-columns: repeat(2, 1fr); }
+  .cap-card:nth-child(3n) { border-right: 1px solid var(--c-line); }
+  .cap-card:nth-child(2n) { border-right: 0; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .stat { padding: 0 1rem; border-right: 0; border-bottom: 1px solid var(--c-line); padding-bottom: 1.5rem; }
+  .stat:nth-child(odd) { border-right: 1px solid var(--c-line); }
+  .stat:nth-last-child(-n+2) { border-bottom: 0; padding-bottom: 0; }
+  .stat:first-child { padding-left: 0; }
+  .inv-grid-2 { grid-template-columns: 1fr; gap: 2.5rem; }
+  .carriers-roll { grid-template-columns: 1fr; }
+  .carrier-row:nth-child(odd) { border-right: 0; padding-right: 1rem; }
+  .carrier-row:nth-child(even) { padding-left: 0.5rem; }
+  .carrier-row:nth-last-child(2) { border-bottom: 1px solid var(--c-line); }
+  .carrier-row:nth-child(even):hover { padding-left: 1.25rem; }
+  .featured { grid-template-columns: 1fr; padding: 3rem 2rem; }
+  .proj { grid-template-columns: 1fr; gap: 1rem; }
+  .proj .proj-side { text-align: left; padding-top: 0; flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+  .note { grid-template-columns: 1fr; gap: 0.75rem; }
+  .note .note-side { text-align: left; flex-direction: row; gap: 1rem; padding-top: 0; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  .section-head { grid-template-columns: 1fr; gap: 1.5rem; }
+  .cap-cta { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer { padding: 4rem 0 2rem; }
+  .footer-statement { grid-template-columns: 1fr; gap: 1.5rem; padding-bottom: 2.5rem; margin-bottom: 2.5rem; }
+  .footer-statement .signoff { text-align: left; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-rule { grid-template-columns: 1fr; gap: 0.75rem; text-align: left; }
+  .footer-rule .center, .footer-rule .to-top { text-align: left; }
+}
+@media (max-width: 600px) {
+  :root { --pad-x: 1.15rem; --pad-y-sec: 4rem; }
+  .hero { padding: 3rem 0 4rem; }
+  .hero-meta { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .capabilities-grid { grid-template-columns: 1fr; }
+  .cap-card { border-right: 0 !important; }
+  .ticker-track { font-size: 1.15rem; padding: 1rem 0; }
+  .stats-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .stat { border-right: 0 !important; padding: 1.25rem 0; border-bottom: 1px solid var(--c-line); }
+  .stat:last-child { border-bottom: 0; }
+  .stat-num { font-size: 3.5rem; }
+  .carrier-row { grid-template-columns: 2rem 1fr; padding: 1.1rem 0.5rem; gap: 0.85rem; }
+  .carrier-row .meta { display: none; }
+  .carrier-row .name { font-size: 1.3rem; }
+  .featured { padding: 2.4rem 1.4rem; }
+  .featured::before { right: 1rem; top: 1rem; }
+  .about-prose p:first-of-type::first-letter { font-size: 4rem; }
+  .availability { font-size: 0.62rem; letter-spacing: 0.1em; }
+  .availability::before { width: 6px; height: 6px; }
+}
+
+/* Reduced motion — respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .ticker-track { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- =========================================================
+     MASTHEAD
+========================================================== -->
+<header class="masthead" id="top">
+  <div class="masthead-inner">
+    <div class="brandmark">
+      <span>Gwen Ballesteros</span>
+      <span class="mark-meta">Vol. 01</span>
+    </div>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#portfolio">Experience</a>
+      <a href="#notes">Field Notes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="availability" aria-label="Availability">Available · Q3 engagements</span>
+  </div>
+</header>
+
+<!-- =========================================================
+     HERO
+========================================================== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-meta rise">
+      <div><span>Practice Est.</span><b>2023 — Vol. 01</b></div>
+      <div><span>Based</span><b>Philippines · Remote</b></div>
+      <div><span>Serving</span><b>U.S. Agencies, Brokerages, MGAs</b></div>
+      <div><span>Discipline</span><b>Insurance</b></div>
+    </div>
+
+    <h1 class="hero-headline rise">
+      Commercial coverage,<br />
+      placed and serviced with <em>precision.</em>
+    </h1>
+
+    <p class="hero-tagline rise">
+      Account management and underwriting support for U.S. agencies, brokerages,
+      and MGAs — three years deep in mid-to-large commercial accounts spanning
+      construction, hospitality, real estate, manufacturing, retail, professional
+      services, and transportation. New business through renewal, every detail
+      accounted for.
+    </p>
+
+    <div class="credentials rise" aria-label="Credentials">
+      <span class="credential">Commercial Lines · 3+ Years</span>
+      <span class="credential">Chartered Insurance Institute (CII) Member · Society of Underwriting Professionals</span>
+      <span class="credential">Admitted &amp; E&amp;S Markets</span>
+      <span class="credential">B.S. Information Technology</span>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     STATS BAND — quick credibility pass after the hero
+========================================================== -->
+<aside class="stats-band reveal" aria-label="Practice at a glance">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="stat-num">3<em>+</em></span>
+        <span class="stat-label">Years in insurance</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">20</span>
+        <span class="stat-label">Commercial carriers</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">15<em>+</em></span>
+        <span class="stat-label">Lines of coverage</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">7</span>
+        <span class="stat-label">Industries serviced</span>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- =========================================================
+     TICKER
+========================================================== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <!-- Track is duplicated inline so the marquee loops seamlessly -->
+    <span>Commercial Lines</span><span class="dot">●</span>
+    <span>Account Management</span><span class="dot">●</span>
+    <span>Underwriting Support</span><span class="dot">●</span>
+    <span>Endorsements &amp; COIs</span><span class="dot">●</span>
+    <span>Renewals &amp; Retention</span><span class="dot">●</span>
+    <span>Quoting &amp; Binding</span><span class="dot">●</span>
+    <span>Risk Assessment</span><span class="dot">●</span>
+    <span>Carrier Liaison</span><span class="dot">●</span>
+    <span>Admitted &amp; E&amp;S Lines</span><span class="dot">●</span>
+    <span>SOPs &amp; Training</span><span class="dot">●</span>
+    <span>NowCerts · InsuredMine · Applied Epic · ALIS</span><span class="dot">●</span>
+
+    <span>Commercial Lines</span><span class="dot">●</span>
+    <span>Account Management</span><span class="dot">●</span>
+    <span>Underwriting Support</span><span class="dot">●</span>
+    <span>Endorsements &amp; COIs</span><span class="dot">●</span>
+    <span>Renewals &amp; Retention</span><span class="dot">●</span>
+    <span>Quoting &amp; Binding</span><span class="dot">●</span>
+    <span>Risk Assessment</span><span class="dot">●</span>
+    <span>Carrier Liaison</span><span class="dot">●</span>
+    <span>Admitted &amp; E&amp;S Lines</span><span class="dot">●</span>
+    <span>SOPs &amp; Training</span><span class="dot">●</span>
+    <span>NowCerts · InsuredMine · Applied Epic · ALIS</span><span class="dot">●</span>
+  </div>
+</div>
+
+<!-- =========================================================
+     ABOUT — Section 01
+========================================================== -->
+<section class="editorial" id="about">
+  <div class="container">
+    <header class="section-head reveal">
+      <div class="section-meta">
+        <span class="section-label">Section 01</span>
+        <span class="eyebrow">A short introduction</span>
+      </div>
+      <h2>The person behind the <em>policy.</em></h2>
+    </header>
+
+    <div class="about-grid">
+      <aside class="about-aside reveal">
+        <span class="aside-label">— Quick Facts</span>
+        <ul class="facts">
+          <li><b>Role</b><span>Associate Account Manager · Direct Client</span></li>
+          <li><b>Tenure</b><span>3+ years in insurance</span></li>
+          <li><b>Locale</b><span>Philippines · Remote (PHT / UTC+8)</span></li>
+          <li><b>Stack</b><span>NowCerts · InsuredMine · Applied Epic · ALIS · Excel · Claude · Automation</span></li>
+          <li><b>Carriers</b><span>Travelers, Chubb, Hartford, Markel, Hiscox &amp; more</span></li>
+          <li><b>Markets</b><span>U.S. commercial · Admitted &amp; E&amp;S</span></li>
+          <li><b>Industries</b><span>Construction · Hospitality · Real Estate · Manufacturing · Retail · Pro Services · Transportation</span></li>
+          <li><b>Studying</b><span>CLCS &amp; CII designations · ongoing CPD</span></li>
+        </ul>
+      </aside>
+
+      <div class="about-prose reveal">
+        <p>
+          I came into insurance from the operational side and stayed because the work
+          rewards careful thinking. As an account manager and underwriting support
+          specialist, I handle the parts of a policy that decide whether it actually
+          serves the insured: new business quoting, endorsements, certificates,
+          renewals, audits, and the quiet thousand-step process that turns a
+          submission into a bound policy.
+        </p>
+
+        <p>
+          Today I service mid-to-large commercial accounts across construction,
+          restaurant &amp; hospitality, real estate, manufacturing, retail,
+          professional services, and transportation — quoting new business,
+          preparing renewals, processing endorsements, coordinating with sales
+          executives, and standing up SOPs for new hires.
+          Earlier in my career I sat on the other side of the table as a Commercial
+          Lines Underwriter, evaluating risks, reading loss runs, and pricing policies
+          against carrier appetite. That dual view is the thing I bring to every desk
+          I work on.
+        </p>
+
+        <blockquote class="pull-quote">
+          I've worked both the brokerage and MGA sides of the business — that gives
+          me a well-rounded perspective on how coverage gets placed, priced, and
+          serviced.
+          <span class="attr">— Positioning Statement</span>
+        </blockquote>
+
+        <p>
+          Tooling-wise, I live inside Applied Epic and NowCerts day to day, with
+          regular work in InsuredMine, ALIS, Excel, and the carrier portals — Travelers,
+          Chubb, Hartford, Selective, Markel, Hiscox, and the rest of the bench.
+          I'm a CII member through the Society of Underwriting Professionals and
+          actively working toward formal designations.
+        </p>
+
+        <p>
+          If you run a U.S. agency, brokerage, or MGA and want a steady,
+          underwriting-literate operator on your accounts — or you're an industry
+          professional who simply wants to compare notes — I'd be glad to talk.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CAPABILITIES — Section 02 (replaces Services & Rates)
+========================================================== -->
+<section class="editorial" id="capabilities">
+  <div class="container">
+    <header class="section-head reveal">
+      <div class="section-meta">
+        <span class="section-label">Section 02</span>
+        <span class="eyebrow">What I take on</span>
+      </div>
+      <h2>Hire me for the <em>work</em> below.</h2>
+    </header>
+
+    <div class="capabilities-grid reveal">
+      <article class="cap-card">
+        <span class="cap-num">No. 01</span>
+        <h3>Account <em>Servicing</em></h3>
+        <p>
+          Endorsements, certificates of insurance, and mid-term changes processed
+          cleanly the first time. Documented, carrier-aligned, never missed.
+        </p>
+      </article>
+
+      <article class="cap-card">
+        <span class="cap-num">No. 02</span>
+        <h3>New Business &amp; <em>Renewals</em></h3>
+        <p>
+          New business quoting and submission prep alongside the full renewal
+          lifecycle. Producers stay focused on selling — policies bind on time.
+        </p>
+      </article>
+
+      <article class="cap-card">
+        <span class="cap-num">No. 03</span>
+        <h3>Underwriting <em>Support</em></h3>
+        <p>
+          Submission prep, financial review, and loss run analysis. Built on real
+          underwriting experience across admitted and excess &amp; surplus markets.
+        </p>
+      </article>
+
+      <article class="cap-card">
+        <span class="cap-num">No. 04</span>
+        <h3>Quoting &amp; <em>Binding</em></h3>
+        <p>
+          Multi-carrier quote prep, binder issuance, and policy typing. GL,
+          property, auto, workers' comp — every line handled with the documentation
+          right.
+        </p>
+      </article>
+
+      <article class="cap-card">
+        <span class="cap-num">No. 05</span>
+        <h3>Carrier <em>Relations</em></h3>
+        <p>
+          Clean liaison work across commercial carriers and MGAs. Submissions,
+          declinations, renewals — communicated like the relationship matters.
+        </p>
+      </article>
+
+      <article class="cap-card">
+        <span class="cap-num">No. 06</span>
+        <h3>Operations &amp; <em>Training</em></h3>
+        <p>
+          SOPs that hold up under volume. New-hire mentoring that sticks. The
+          quiet infrastructure behind a steady book.
+        </p>
+      </article>
+    </div>
+
+    <div class="cap-cta reveal">
+      <h3>If new submissions are stacking up and renewals are <em>looming</em>, let's talk about how I plug in.</h3>
+      <a href="#contact" class="btn">Start a conversation <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     INVENTORY — Carriers, Coverage, Tools
+========================================================== -->
+<aside class="inventory" aria-label="Carriers, coverage, and tools">
+  <div class="container">
+
+    <!-- Carriers — editorial roll call.
+         Two columns, numbered, with brand-colored accent dots and a market
+         tag for each carrier. Hover gives the name an italic burnt-orange
+         accent and pulses the dot. -->
+    <div class="inv-carriers reveal">
+      <h4>Carriers I've worked with</h4>
+      <ol class="carriers-roll">
+        <li class="carrier-row" style="--brand:#c8102e;"><span class="num">01</span><div class="name-block"><span class="dot"></span><h5 class="name">Travelers</h5></div><span class="meta">Standard · National</span></li>
+        <li class="carrier-row" style="--brand:#14387f;"><span class="num">02</span><div class="name-block"><span class="dot"></span><h5 class="name">Chubb</h5></div><span class="meta">Specialty · Admitted</span></li>
+        <li class="carrier-row" style="--brand:#007558;"><span class="num">03</span><div class="name-block"><span class="dot"></span><h5 class="name">The Hartford</h5></div><span class="meta">Standard · Admitted</span></li>
+        <li class="carrier-row" style="--brand:#00a650;"><span class="num">04</span><div class="name-block"><span class="dot"></span><h5 class="name">Geico</h5></div><span class="meta">Commercial Auto</span></li>
+        <li class="carrier-row" style="--brand:#002d72;"><span class="num">05</span><div class="name-block"><span class="dot"></span><h5 class="name">Selective</h5></div><span class="meta">Standard · Admitted</span></li>
+        <li class="carrier-row" style="--brand:#1a1a1a;"><span class="num">06</span><div class="name-block"><span class="dot"></span><h5 class="name">Berkshire Hathaway</h5></div><span class="meta">Specialty</span></li>
+        <li class="carrier-row" style="--brand:#003a70;"><span class="num">07</span><div class="name-block"><span class="dot"></span><h5 class="name">Markel</h5></div><span class="meta">Specialty · E&amp;S</span></li>
+        <li class="carrier-row" style="--brand:#ffc20e;"><span class="num">08</span><div class="name-block"><span class="dot"></span><h5 class="name">Hiscox</h5></div><span class="meta">Specialty · E&amp;S</span></li>
+        <li class="carrier-row" style="--brand:#001f54;"><span class="num">09</span><div class="name-block"><span class="dot"></span><h5 class="name">Nautilus</h5></div><span class="meta">E&amp;S</span></li>
+        <li class="carrier-row" style="--brand:#2563eb;"><span class="num">10</span><div class="name-block"><span class="dot"></span><h5 class="name">Sayata</h5></div><span class="meta">Cyber Specialty</span></li>
+        <li class="carrier-row" style="--brand:#d50000;"><span class="num">11</span><div class="name-block"><span class="dot"></span><h5 class="name">CNA</h5></div><span class="meta">Standard · Admitted</span></li>
+        <li class="carrier-row" style="--brand:#fdb913;"><span class="num">12</span><div class="name-block"><span class="dot"></span><h5 class="name">Liberty Mutual</h5></div><span class="meta">Standard · National</span></li>
+        <li class="carrier-row" style="--brand:#2453b8;"><span class="num">13</span><div class="name-block"><span class="dot"></span><h5 class="name">Nationwide</h5></div><span class="meta">Standard · Admitted</span></li>
+        <li class="carrier-row" style="--brand:#0066b3;"><span class="num">14</span><div class="name-block"><span class="dot"></span><h5 class="name">Philadelphia</h5></div><span class="meta">Specialty · Admitted</span></li>
+        <li class="carrier-row" style="--brand:#003874;"><span class="num">15</span><div class="name-block"><span class="dot"></span><h5 class="name">AmTrust</h5></div><span class="meta">Workers' Comp</span></li>
+        <li class="carrier-row" style="--brand:#a51c30;"><span class="num">16</span><div class="name-block"><span class="dot"></span><h5 class="name">Great American</h5></div><span class="meta">Specialty</span></li>
+        <li class="carrier-row" style="--brand:#002a5c;"><span class="num">17</span><div class="name-block"><span class="dot"></span><h5 class="name">USLI</h5></div><span class="meta">Specialty · E&amp;S</span></li>
+        <li class="carrier-row" style="--brand:#2167ae;"><span class="num">18</span><div class="name-block"><span class="dot"></span><h5 class="name">Zurich</h5></div><span class="meta">Standard · National</span></li>
+        <li class="carrier-row" style="--brand:#00592c;"><span class="num">19</span><div class="name-block"><span class="dot"></span><h5 class="name">DB Insurance</h5></div><span class="meta">Standard · Admitted</span></li>
+        <li class="carrier-row" style="--brand:#14b8a6;"><span class="num">20</span><div class="name-block"><span class="dot"></span><h5 class="name">Steadily</h5></div><span class="meta">Specialty · Landlord</span></li>
+      </ol>
+    </div>
+
+    <!-- Coverage + Tools as two columns -->
+    <div class="inv-grid-2 reveal">
+      <div class="inv-col">
+        <h4>Commercial Lines Coverage</h4>
+        <ul>
+          <li>General Liability</li>
+          <li>Commercial Property</li>
+          <li>Workers' Compensation</li>
+          <li>Commercial Auto</li>
+          <li>Umbrella &amp; Excess</li>
+          <li>Business Owner's Policy (BOP)</li>
+          <li>Inland Marine</li>
+          <li>Builders Risk</li>
+          <li>Liquor Liability</li>
+          <li>Restaurant &amp; Hospitality</li>
+          <li>Cyber Liability</li>
+          <li>Professional Liability (E&amp;O)</li>
+          <li>Employment Practices (EPLI)</li>
+          <li>Crime &amp; Fidelity</li>
+          <li>Directors &amp; Officers (D&amp;O)</li>
+        </ul>
+      </div>
+
+      <div class="inv-col">
+        <h4>Tools &amp; Systems</h4>
+        <ul>
+          <li>NowCerts</li>
+          <li>InsuredMine</li>
+          <li>Applied Epic</li>
+          <li>ALIS</li>
+          <li>Microsoft Excel</li>
+          <li>Claude</li>
+          <li>Carrier Portals</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</aside>
+
+<!-- =========================================================
+     PORTFOLIO / EXPERIENCE — Section 03
+========================================================== -->
+<section class="editorial" id="portfolio">
+  <div class="container">
+    <header class="section-head reveal">
+      <div class="section-meta">
+        <span class="section-label">Section 03</span>
+        <span class="eyebrow">Selected work</span>
+      </div>
+      <h2>Where I've put in the <em>hours.</em></h2>
+    </header>
+
+    <!-- FEATURED — current role, dark inversion -->
+    <article class="featured reveal">
+      <div class="feat-meta">
+        <span><b>Direct Client</b></span>
+        <span>Sept 2025 — Present</span>
+        <span>Philippines · Remote</span>
+        <span>Status: Active</span>
+      </div>
+      <div>
+        <h3>Associate Account Manager — <em>Mid-to-Large</em> Commercial Portfolio</h3>
+        <p>
+          Primary service contact for a portfolio of mid-to-large B2B commercial
+          accounts spanning construction, hospitality, real estate, manufacturing,
+          retail, and professional services. I quote new business, process
+          endorsements and account modifications, run the renewal and retention
+          lifecycle alongside sales executives, and onboard new clients with
+          documented service protocols.
+        </p>
+        <p>
+          On the operations side, I train and mentor new hires on workflows,
+          systems, and client communication, and write the SOPs that keep account
+          servicing scalable as the book grows.
+        </p>
+        <div class="tags">
+          <span class="tag">Account Management</span>
+          <span class="tag">New Business</span>
+          <span class="tag">Renewals</span>
+          <span class="tag">Onboarding</span>
+          <span class="tag">SOP Authoring</span>
+          <span class="tag">Mentoring</span>
+        </div>
+      </div>
+    </article>
+
+    <ul class="projects-list reveal">
+      <li class="proj">
+        <span class="proj-num">No. 02</span>
+        <div>
+          <h3>Commercial Lines <em>Underwriter</em> — Risk &amp; Pricing</h3>
+          <p>
+            Assessed commercial business risks, set coverage and pricing across a
+            diverse account portfolio, and analyzed financial statements and loss
+            histories to quantify exposure. Worked directly with agents and brokers
+            to structure tailored coverage and facilitate timely policy issuance.
+          </p>
+          <div class="proj-tags">
+            <span>Risk Analysis</span><span>Loss Run Review</span>
+            <span>Pricing</span><span>Admitted &amp; E&amp;S</span>
+          </div>
+        </div>
+        <div class="proj-side">
+          <span><b>Staff Boom</b></span>
+          <span>Mar — Sept 2025</span>
+          <span>Remote · U.S. Client</span>
+        </div>
+      </li>
+
+      <li class="proj">
+        <span class="proj-num">No. 03</span>
+        <div>
+          <h3>Team Leader, CSR L2 — <em>Operations</em> &amp; Escalations</h3>
+          <p>
+            Led a team of data processing specialists, oversaw customer service and
+            account management functions, and served as the primary escalation point
+            for complex client issues. Generated performance reports on data accuracy,
+            customer service metrics, and processing efficiency for senior leadership.
+          </p>
+          <div class="proj-tags">
+            <span>Team Leadership</span><span>Escalations</span>
+            <span>Reporting</span><span>SLA Management</span>
+          </div>
+        </div>
+        <div class="proj-side">
+          <span><b>Staff Boom</b></span>
+          <span>Jul — Sept 2025</span>
+          <span>Remote · U.S. Client</span>
+        </div>
+      </li>
+
+      <li class="proj">
+        <span class="proj-num">No. 04</span>
+        <div>
+          <h3>Data Processing Specialist — <em>Back-office</em> Underwriting</h3>
+          <p>
+            Performed back-office underwriting and policy operations for a U.S.
+            brokerage and MGA, handling both admitted and E&amp;S lines across
+            commercial and personal lines. Quoting, binding, endorsement processing,
+            and policy typing across GL, property, auto, and workers' comp — with
+            data managed inside ALIS, Applied Epic, and Excel.
+          </p>
+          <div class="proj-tags">
+            <span>Quoting &amp; Binding</span><span>Endorsements</span>
+            <span>ALIS</span><span>Applied Epic</span>
+          </div>
+        </div>
+        <div class="proj-side">
+          <span><b>Staff Boom</b></span>
+          <span>Mar 2023 — Jul 2025</span>
+          <span>Remote · U.S. Client</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- =========================================================
+     FIELD NOTES — Section 04
+========================================================== -->
+<section class="editorial" id="notes">
+  <div class="container">
+    <header class="section-head reveal">
+      <div class="section-meta">
+        <span class="section-label">Section 04</span>
+        <span class="eyebrow">Field notes</span>
+      </div>
+      <h2>Working notes from <em>the desk.</em></h2>
+    </header>
+
+    <ul class="notes-list reveal">
+      <li class="note">
+        <span class="note-num">N° 01</span>
+        <div>
+          <h3>Reading a loss run without flinching.</h3>
+          <p class="note-teaser">What three years of underwriting taught me about the stories loss runs tell — and the ones they hide. A practical reader's guide for account managers.</p>
+        </div>
+        <div class="note-side">
+          <span class="note-cat">Underwriting</span>
+          <span class="note-status">In Draft</span>
+        </div>
+      </li>
+
+      <li class="note">
+        <span class="note-num">N° 02</span>
+        <div>
+          <h3>What MGAs see that retail agents don't.</h3>
+          <p class="note-teaser">Three years across both sides of the placement table. The patterns you can't see from one chair, and why agencies that understand both move faster.</p>
+        </div>
+        <div class="note-side">
+          <span class="note-cat">Industry</span>
+          <span class="note-status">Forthcoming</span>
+        </div>
+      </li>
+
+      <li class="note">
+        <span class="note-num">N° 03</span>
+        <div>
+          <h3>SOPs that account managers actually use.</h3>
+          <p class="note-teaser">The difference between a binder of policies that gets ignored and a workflow that runs itself. Notes from authoring SOPs that survive contact with a busy desk.</p>
+        </div>
+        <div class="note-side">
+          <span class="note-cat">Operations</span>
+          <span class="note-status">Forthcoming</span>
+        </div>
+      </li>
+
+      <li class="note">
+        <span class="note-num">N° 04</span>
+        <div>
+          <h3>The quiet discipline of renewal prep.</h3>
+          <p class="note-teaser">The renewal that closes on time started ninety days ago. What that work actually looks like, and why retention follows from it.</p>
+        </div>
+        <div class="note-side">
+          <span class="note-cat">Account Management</span>
+          <span class="note-status">Forthcoming</span>
+        </div>
+      </li>
+
+      <li class="note">
+        <span class="note-num">N° 05</span>
+        <div>
+          <h3>Certificates of insurance — a field guide.</h3>
+          <p class="note-teaser">Every COI looks the same until it doesn't. A working glossary of the moments that matter — additional insureds, waivers of subrogation, and the quiet language of compliance.</p>
+        </div>
+        <div class="note-side">
+          <span class="note-cat">Coverage</span>
+          <span class="note-status">Forthcoming</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- =========================================================
+     CONTACT — Section 05 (inverted dark)
+========================================================== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <header class="section-head reveal">
+      <div class="section-meta">
+        <span class="section-label">Section 05</span>
+        <span class="eyebrow">Get in touch</span>
+      </div>
+      <h2>Let's place coverage <em>thoughtfully.</em></h2>
+    </header>
+
+    <p class="contact-intro reveal">
+      Tell me about your book. Mid-to-large commercial? E&amp;S? Construction-heavy
+      or hospitality-heavy? Whether you're an agency, a brokerage, an MGA, or a
+      recruiter who thinks I might be a fit — I read every message and reply
+      within one business day.
+    </p>
+
+    <div class="contact-grid">
+      <!-- Form -->
+      <form class="contact-form reveal" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-name">Name</label>
+            <input type="text" id="f-name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form-field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" required autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-company">Agency / Company</label>
+            <input type="text" id="f-company" name="company" autocomplete="organization" />
+          </div>
+          <div class="form-field">
+            <label for="f-type">Engagement Type</label>
+            <select id="f-type" name="engagement-type">
+              <option value="account-management">Account Management Support</option>
+              <option value="new-business">New Business Quoting &amp; Submissions</option>
+              <option value="renewals">Renewal &amp; Retention Lifecycle</option>
+              <option value="underwriting-support">Underwriting Support</option>
+              <option value="quoting-binding">Quoting &amp; Binding</option>
+              <option value="ops-training">Operations &amp; Training (SOPs)</option>
+              <option value="general">General Inquiry</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="f-message">Message</label>
+          <textarea id="f-message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send message <span class="arrow">→</span></button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <!-- Sidebar -->
+      <aside class="contact-info reveal" aria-label="Direct contact">
+        <div class="info-block">
+          <span class="info-label">Email</span>
+          <a class="info-val" href="mailto:gballesteros.info@gmail.com">gballesteros.info@gmail.com</a>
+        </div>
+        <div class="info-block">
+          <span class="info-label">LinkedIn</span>
+          <a class="info-val" href="https://www.linkedin.com/in/gwenballesteros" target="_blank" rel="noopener">www.linkedin.com/in/gwenballesteros</a>
+        </div>
+        <div class="info-block">
+          <span class="info-label">Upwork</span>
+          <span class="info-val">Upon request</span>
+        </div>
+        <div class="info-block">
+          <span class="info-label">Onlinejobs</span>
+          <span class="info-val">Upon request</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+<footer class="footer">
+  <div class="container">
+
+    <!-- Closing editorial statement -->
+    <div class="footer-statement">
+      <h3>The work is in the details — and the <em>details</em> are mine.</h3>
+      <div class="signoff">
+        — Signed off
+        <b>Gwen Ballesteros</b>
+      </div>
+    </div>
+
+    <!-- Three-column colophon grid -->
+    <div class="footer-grid">
+      <div class="foot-col">
+        <span class="foot-label">— Connect</span>
+        <ul>
+          <li><a href="mailto:gballesteros.info@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/gwenballesteros" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#contact">Send a message</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <span class="foot-label">— Sections</span>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#capabilities">Capabilities</a></li>
+          <li><a href="#portfolio">Experience</a></li>
+          <li><a href="#notes">Field Notes</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <span class="foot-label">— Colophon</span>
+        <p>
+          Set in Instrument Serif and Manrope, with JetBrains Mono for technical
+          accents. Hand-built as a single self-contained page, no trackers, no
+          frameworks.
+        </p>
+        <span class="foot-location">Philippines · Remote · PHT (UTC+8)</span>
+      </div>
+    </div>
+
+    <!-- Bottom rule -->
+    <div class="footer-rule">
+      <span>© 2026 Gwen Ballesteros · All rights reserved</span>
+      <span class="center">Volume 01 — Insurance, considered.</span>
+      <a href="#top" class="to-top">Back to top ↑</a>
+    </div>
+
+  </div>
+</footer>
+
+<!-- =========================================================
+     SCRIPTS — minimal, no dependencies
+     • Hero stagger animation on load
+     • IntersectionObserver-based scroll reveal
+     • Form: placeholder submit handler
+========================================================== -->
+<script>
+(function () {
+  /* Hero rise — stagger children on load */
+  var rises = document.querySelectorAll('.hero .rise');
+  rises.forEach(function (el, i) {
+    setTimeout(function () { el.classList.add('in'); }, 120 + i * 140);
+  });
+
+  /* Scroll reveal */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    /* Fallback — show everything */
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* Contact form — placeholder handler.
+     TO ENABLE LIVE SUBMISSIONS:
+       1) Formspree:    set <form action="https://formspree.io/f/YOUR_ID" method="POST">
+       2) Netlify:      add data-netlify="true" name="contact" attributes
+       3) Custom API:   replace the fetch() block below
+  */
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('form-status');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = form.querySelector('#f-name').value.trim();
+      var email = form.querySelector('#f-email').value.trim();
+      var msg = form.querySelector('#f-message').value.trim();
+      if (!name || !email || !msg) {
+        status.textContent = '— Please fill in name, email, and a short message.';
+        return;
+      }
+      status.textContent = '— Thanks, ' + name.split(' ')[0] + '. Connect Formspree or Netlify Forms to enable live delivery.';
+      form.reset();
+    });
+  }
+})();
+</script>
+</body>
+</html>
