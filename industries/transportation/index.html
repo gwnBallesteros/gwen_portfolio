@@ -844,6 +844,67 @@ a { transition: color 200ms ease; }
   .article blockquote::after { display: none; }
 }
 
+
+/* CTA-final two-column with steps panel */
+.cta-final.with-steps {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  padding: 4rem 3rem;
+}
+.cta-final.with-steps .cta-main { position: relative; z-index: 1; }
+.cta-final.with-steps .cta-side {
+  position: relative; z-index: 1;
+  border-left: 1px solid var(--c-dark-line);
+  padding-left: 2.5rem;
+}
+.cta-final.with-steps .cta-side .cta-side-label {
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--c-accent);
+  margin-bottom: 1.5rem;
+  display: block;
+}
+.cta-final.with-steps ol.cta-steps {
+  list-style: none; counter-reset: cta-step;
+  padding: 0; margin: 0;
+}
+.cta-final.with-steps ol.cta-steps li {
+  counter-increment: cta-step;
+  padding: 0.85rem 0; padding-left: 2.4rem;
+  position: relative;
+  font-size: 0.95rem; line-height: 1.45;
+  border-top: 1px solid var(--c-dark-line);
+  opacity: 0.92;
+}
+.cta-final.with-steps ol.cta-steps li:first-child { border-top: 0; padding-top: 0; }
+.cta-final.with-steps ol.cta-steps li:last-child { padding-bottom: 0; }
+.cta-final.with-steps ol.cta-steps li::before {
+  content: counter(cta-step, decimal-leading-zero);
+  position: absolute; left: 0; top: 0.85rem;
+  font-family: var(--f-display); font-style: italic;
+  font-size: 1.4rem; line-height: 1;
+  color: var(--c-accent);
+}
+.cta-final.with-steps ol.cta-steps li:first-child::before { top: 0; }
+.cta-final.with-steps ol.cta-steps li b {
+  display: block; font-weight: 600; margin-bottom: 0.15rem;
+  color: var(--c-bg);
+}
+.cta-final.with-steps ol.cta-steps li span {
+  display: block; opacity: 0.65; font-size: 0.86rem;
+}
+@media (max-width: 800px) {
+  .cta-final.with-steps { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.6rem; }
+  .cta-final.with-steps .cta-side {
+    border-left: 0; border-top: 1px solid var(--c-dark-line);
+    padding-left: 0; padding-top: 1.5rem;
+  }
+}
+
 </style>
 <style>
   .ind-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--c-line-strong); }
@@ -1013,12 +1074,23 @@ a { transition: color 200ms ease; }
 
 <section class="editorial-section">
   <div class="container">
-    <div class="cta-final reveal">
-      <h3>If your transportation book has DOT complexity and MOD pressure, <em>let&rsquo;s talk.</em></h3>
-      <p>
+    <div class="cta-final with-steps reveal">
+      <div class="cta-main">
+        <h3>If your transportation book has DOT complexity and MOD pressure, <em>let&rsquo;s talk.</em></h3>
+        <p>
         Whether it&rsquo;s overflow on a busy fleet renewal, dedicated support for a single trucking client, or full back-office for your transportation vertical, I plug into your AMS, review the unit schedule, and start clearing endorsements by week one.
       </p>
-      <a href="/#contact" class="btn">Start a conversation <span class="arrow">→</span></a>
+        <a href="/#contact" class="btn">Start a conversation <span class="arrow">→</span></a>
+      </div>
+      <div class="cta-side">
+        <span class="cta-side-label">What happens next</span>
+        <ol class="cta-steps">
+          <li><b>Tell me about your book</b><span>15-minute call. No commitment, no pitch deck.</span></li>
+          <li><b>Pick a starter slice</b><span>A few renewals or one vertical. Low-risk pilot.</span></li>
+          <li><b>Plug into your AMS</b><span>I learn your workflow. Producing by week one.</span></li>
+          <li><b>Review at the quarter</b><span>Decide together what scales and what doesn&rsquo;t.</span></li>
+        </ol>
+      </div>
     </div>
   </div>
 <div class="divider-marks reveal"><span></span><span></span><span></span></div>
