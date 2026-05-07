@@ -1938,4 +1938,11 @@ section.editorial {
         status.textContent = '— Please fill in name, email, and a short message.';
         return;
       }
-      status.
+      status.textContent = '— Thanks, ' + name.split(' ')[0] + '. Connect Formspree or Netlify Forms to enable live delivery.';
+      form.reset();
+    });
+  }
+})();
+</script>
+</body>
+</html>
