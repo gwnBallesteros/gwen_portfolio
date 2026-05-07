@@ -996,363 +996,256 @@ a { transition: color 200ms ease; }
 
 
 
-/* === Services page — mobile-specific fixes === */
+/* === Services page — mobile responsiveness (v2) === */
+
+@media (max-width: 900px) {
+  /* Page header tighter */
+  .page-header { padding: 2.5rem 0 2rem; }
+  .page-title { line-height: 1; }
+}
+
 @media (max-width: 700px) {
-  /* Fix timeline circle position when padding/margin shrink on mobile */
-  .timeline { margin-left: 0.4rem; padding-left: 1.5rem; border-left-width: 1.5px; }
-  .timeline-item { padding: 1.1rem 0; }
+  /* === Layout rhythm === */
+  .article { padding: 1.5rem 0 2rem; }
+  .article h2 { font-size: 1.55rem; line-height: 1.1; margin: 1.75rem 0 0.85rem; }
+  .article p { font-size: 1rem; line-height: 1.65; }
+  .editorial-section { padding: 1.5rem 0 2.5rem; }
+  .container { padding: 0 1.15rem; }
+
+  /* === Page header === */
+  .page-header { padding: 2rem 0 1.5rem; }
+  .page-meta { font-size: 0.62rem; gap: 0.6rem 1rem; flex-wrap: wrap; }
+  .page-title { font-size: clamp(1.85rem, 8.5vw, 2.6rem); margin-bottom: 1.1rem; max-width: 100%; }
+  .page-lead { font-size: 0.98rem; line-height: 1.55; }
+
+  /* === Vertical timeline === */
+  .timeline {
+    margin-left: 0.4rem;
+    padding-left: 1.5rem;
+    border-left-width: 1.5px;
+    border-left-color: var(--c-line-strong);
+  }
+  .timeline-item { padding: 1rem 0; }
+  .timeline-item:first-child { padding-top: 0.4rem; }
+  .timeline-item:last-child { padding-bottom: 0.4rem; }
   .timeline-item::before {
     left: -1.85rem;
-    top: 1.35rem;
-    width: 12px; height: 12px;
+    top: 1.2rem;
+    width: 11px; height: 11px;
     border-width: 2px;
     box-shadow: 0 0 0 1.5px var(--c-accent);
   }
-  .timeline-item h3 { font-size: 1.35rem; line-height: 1.1; }
-  .timeline-item .when { font-size: 0.62rem; letter-spacing: 0.14em; margin-bottom: 0.35rem; }
-  .timeline-item p { font-size: 0.92rem; line-height: 1.55; }
-
-  /* Tier badge — keep readable on small cards */
-  .tier-card .tier-badge { top: -9px; font-size: 0.58rem; letter-spacing: 0.14em; padding: 0.28rem 0.7rem; }
-  .tier-card .tier-name { font-size: 0.66rem; }
-
-  /* CTA "What happens next" mobile spacing */
-  .cta-final.with-steps .cta-side { padding-left: 0; padding-top: 1.5rem; border-left: 0; border-top: 1px solid var(--c-dark-line); }
-  .cta-final.with-steps .cta-side .cta-side-label { margin-bottom: 1rem; font-size: 0.6rem; }
-  .cta-final.with-steps ol.cta-steps li b { font-size: 0.94rem; }
-  .cta-final.with-steps ol.cta-steps li span { font-size: 0.82rem; }
-
-  /* Deliverables — more breathing room */
-  .deliverables { gap: 0.85rem; margin: 1.75rem 0; }
-  .deliverable h4 { font-size: 0.66rem; }
-  .deliverable p { font-size: 0.9rem; line-height: 1.5; }
-
-  /* Tier headline + ul tighter on small screens */
-  .tier-card { padding: 1.7rem 1.3rem; }
-  .tier-card .tier-headline { font-size: 1.25rem; line-height: 1.1; margin-bottom: 1rem; }
-  .tier-card ul { margin-bottom: 1.2rem; }
-  .tier-card ul li { font-size: 0.88rem; padding: 0.4rem 0; padding-left: 1.1rem; }
-  .tier-card ul li::before { font-size: 1.2rem; top: 0.45rem; }
-}
-
-@media (max-width: 480px) {
-  .timeline { margin-left: 0.3rem; padding-left: 1.2rem; }
-  .timeline-item::before { left: -1.55rem; width: 10px; height: 10px; }
-  .timeline-item h3 { font-size: 1.2rem; }
-
-  .tier-card { padding: 1.5rem 1.15rem; }
-  .tier-card .tier-headline { font-size: 1.15rem; }
-
-  /* Article intro h2 on services page */
-  .article h2 { font-size: 1.35rem; }
-}
-
-</style>
-<style>
-  .timeline {
-    list-style: none; padding: 0; margin: 0;
-    border-left: 2px solid var(--c-line-strong);
-    margin-left: 1rem; padding-left: 2.5rem;
-  }
-  .timeline-item { position: relative; padding: 1.5rem 0; }
-  .timeline-item::before {
-    content: ''; position: absolute;
-    left: -3rem; top: 2rem;
-    width: 14px; height: 14px;
-    background: var(--c-accent); border-radius: 50%;
-    border: 3px solid var(--c-bg);
-    box-shadow: 0 0 0 2px var(--c-accent);
-  }
+  .timeline-item:first-child::before { top: 0.55rem; }
   .timeline-item h3 {
-    font-family: var(--f-display);
-    font-size: 1.7rem; font-weight: 400;
-    line-height: 1.1; margin: 0 0 0.5rem;
+    font-size: 1.3rem;
+    line-height: 1.1;
+    margin: 0 0 0.35rem;
   }
-  .timeline-item h3 em { color: var(--c-accent); font-style: italic; }
   .timeline-item .when {
-    font-family: var(--f-mono); font-size: 0.7rem;
-    text-transform: uppercase; letter-spacing: 0.16em;
-    color: var(--c-accent); display: block; margin-bottom: 0.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.4rem;
   }
-  .timeline-item p { margin: 0.4rem 0; font-size: 1.02rem; line-height: 1.65; }
+  .timeline-item p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin: 0.3rem 0;
+  }
 
+  /* === Deliverables grid === */
   .deliverables {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem; margin: 2.5rem 0;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin: 1.75rem 0;
   }
   .deliverable {
-    border: 1px solid var(--c-line);
-    padding: 1.6rem 1.4rem;
-    background: var(--c-surface);
-    transition: transform 220ms ease;
+    padding: 1.3rem 1.2rem;
+    border-radius: 2px;
   }
-  .deliverable:hover { transform: translateY(-2px); }
   .deliverable h4 {
-    font-family: var(--f-mono); font-size: 0.72rem;
-    color: var(--c-accent); text-transform: uppercase;
-    letter-spacing: 0.16em; margin: 0 0 0.6rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.5rem;
   }
-  .deliverable p { margin: 0; font-size: 0.94rem; line-height: 1.55; }
-  @media (max-width: 700px) { .deliverables { grid-template-columns: 1fr; } }
-
-  .cta-block {
-    background: var(--c-text); color: var(--c-dark-text);
-    padding: 4rem 3rem; margin-top: 4rem;
-    border-radius: var(--radius);
+  .deliverable p {
+    font-size: 0.92rem;
+    line-height: 1.5;
   }
-  .cta-block h3 {
-    font-family: var(--f-display);
-    font-size: clamp(1.8rem, 3.4vw, 2.6rem);
-    line-height: 1.1; font-weight: 400; margin: 0 0 1.5rem; max-width: 24ch;
-  }
-  .cta-block h3 em { color: var(--c-accent); font-style: italic; }
-  .cta-block p { font-size: 1.05rem; max-width: 56ch; margin: 0 0 2rem; opacity: 0.85; }
-  .cta-block .btn { background: var(--c-accent); border-color: var(--c-accent); }
-  .cta-block .btn:hover { background: var(--c-bg); color: var(--c-text); border-color: var(--c-bg); }
-
-/* =========================================================
-   MOBILE RESPONSIVENESS PASS
-   Adds tighter typography scaling, cleaner stacking, better
-   touch targets, and a portrait-phone breakpoint at 480px.
-========================================================== */
-
-@media (max-width: 900px) {
-  /* Masthead — more compact stacked layout */
-  .masthead-inner { padding: 0.7rem 1rem; gap: 0.6rem; }
-  .brandmark { font-size: 1.3rem; }
-  .brandmark .mark-meta { font-size: 0.62rem; }
-  .nav-links { gap: 0.85rem 1rem; font-size: 0.78rem; }
-  .availability { font-size: 0.66rem; letter-spacing: 0.1em; }
-
-  /* Section padding rhythm */
-  .editorial-section { padding: 3rem 0; }
-}
-
-@media (max-width: 700px) {
-  /* === Typography scaling === */
-  .hero-headline { font-size: clamp(2.4rem, 11vw, 4.2rem); line-height: 0.98; }
-  .hero-tagline { font-size: 1rem; line-height: 1.55; }
-  .section-head h2 { font-size: clamp(1.8rem, 6vw, 2.6rem); line-height: 1.02; }
-  .page-title { font-size: clamp(2rem, 8vw, 3.4rem); line-height: 1; }
-  .page-lead { font-size: 1rem; }
-
-  /* === Hero meta strip — 2×2 instead of 4 cols === */
-  .hero-meta { grid-template-columns: 1fr 1fr; gap: 0.85rem 1rem; font-size: 0.65rem; }
-  .hero-meta div span { font-size: 0.55rem; margin-bottom: 0.2rem; }
-  .hero-meta div b { font-size: 0.7rem; letter-spacing: 0.05em; }
-
-  /* === Stats band === */
-  .stats-band { padding: 2.25rem 0; }
-  .stat-num { font-size: 2.4rem; }
-  .stat-label { font-size: 0.6rem; letter-spacing: 0.13em; }
-  .stats-grid { gap: 1.25rem 0; }
-
-  /* === Article body === */
-  .article { padding: 2rem 0 2.5rem; }
-  .article p { font-size: 1rem; line-height: 1.7; }
-  .article h2 { font-size: 1.55rem; margin: 2rem 0 0.75rem; line-height: 1.15; }
-  .article h3 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
-  .article blockquote { font-size: 1.25rem !important; padding: 1.4rem 0; margin: 1.8rem 0; }
-  .article > .container > p:first-of-type::first-letter { font-size: 3.6rem; padding: 0.3rem 0.55rem 0 0; }
-
-  /* === Featured article card === */
-  .featured-article { padding: 2rem 1.5rem 1.6rem; margin-bottom: 2.5rem; }
-  .featured-article h2 { font-size: 1.7rem; line-height: 1.05; max-width: 100%; }
-  .featured-article p { font-size: 0.95rem; }
-  .featured-article::before { font-size: 8rem; right: -0.5rem; opacity: 0.12; }
-  .featured-article .feat-meta-bar { flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.25rem; }
-  .featured-article .feat-num { font-size: 0.6rem; padding: 0.22rem 0.5rem; }
-  .featured-article .feat-cat { font-size: 0.62rem; }
-  .featured-article .feat-footer { flex-direction: column; align-items: flex-start; gap: 0.85rem; }
-
-  /* === CTA two-column with steps === */
-  .cta-final, .cta-final.with-steps { padding: 2rem 1.5rem; gap: 1.75rem; }
-  .cta-final h3 { font-size: 1.6rem; line-height: 1.1; margin-bottom: 1.1rem; }
-  .cta-final p { font-size: 0.96rem; }
-  .cta-final.with-steps ol.cta-steps li { font-size: 0.88rem; padding: 0.65rem 0 0.65rem 2rem; }
-  .cta-final.with-steps ol.cta-steps li::before { font-size: 1.2rem; top: 0.65rem; }
-  .cta-final.with-steps ol.cta-steps li:first-child::before { top: 0; }
 
   /* === Tier cards === */
-  .tier-card { padding: 1.85rem 1.4rem; }
-  .tier-card .tier-headline { font-size: 1.3rem; }
-  .tier-card ul li { font-size: 0.9rem; padding: 0.45rem 0; }
+  .tier-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .tier-card {
+    padding: 1.85rem 1.4rem 1.6rem;
+    border-radius: 2px;
+  }
+  .tier-card.featured {
+    margin-top: 0.4rem;
+  }
+  .tier-card .tier-badge {
+    top: -10px;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    padding: 0.28rem 0.7rem;
+    font-weight: 700;
+  }
+  .tier-card .tier-name {
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.85rem;
+  }
+  .tier-card .tier-headline {
+    font-size: 1.4rem;
+    line-height: 1.1;
+    margin-bottom: 1.1rem;
+  }
+  .tier-card ul {
+    margin-bottom: 1.4rem;
+  }
+  .tier-card ul li {
+    font-size: 0.92rem;
+    line-height: 1.45;
+    padding: 0.55rem 0;
+    padding-left: 1.2rem;
+  }
+  .tier-card ul li::before {
+    font-size: 1.3rem;
+    top: 0.55rem;
+  }
+  .tier-card .btn,
+  .tier-card .btn-ghost {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    min-height: 44px;
+  }
 
-  /* === Newsletter inline === */
-  .newsletter-inline { padding: 2rem 1.5rem; gap: 1.5rem; }
-  .newsletter-inline h4 { font-size: 1.5rem; line-height: 1.1; max-width: 100%; }
-  .newsletter-inline p { font-size: 0.94rem; }
-  .newsletter-inline .nl-side .nl-stat { font-size: 2.6rem; }
-  .newsletter-inline .nl-promises li { font-size: 0.85rem; }
-  .newsletter-inline form { flex-direction: column; }
-  .newsletter-inline input[type="email"] { padding: 0.85rem; }
-  .newsletter-inline button { width: 100%; padding: 0.95rem; min-height: 44px; }
+  /* === CTA-final with steps === */
+  .cta-final {
+    padding: 2rem 1.4rem;
+    margin-top: 2rem;
+  }
+  .cta-final.with-steps {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding: 2rem 1.4rem;
+  }
+  .cta-final h3 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    max-width: 100%;
+  }
+  .cta-final p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+  }
+  .cta-final .btn {
+    width: auto;
+    padding: 0.85rem 1.3rem;
+    font-size: 0.72rem;
+    min-height: 44px;
+  }
+  .cta-final.with-steps .cta-side {
+    border-left: 0;
+    border-top: 1px solid var(--c-dark-line);
+    padding-left: 0;
+    padding-top: 1.4rem;
+  }
+  .cta-final.with-steps .cta-side .cta-side-label {
+    margin-bottom: 0.85rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+  }
+  .cta-final.with-steps ol.cta-steps li {
+    padding: 0.7rem 0 0.7rem 1.85rem;
+    font-size: 0.88rem;
+    line-height: 1.35;
+  }
+  .cta-final.with-steps ol.cta-steps li::before {
+    font-size: 1.05rem;
+    top: 0.7rem;
+  }
+  .cta-final.with-steps ol.cta-steps li:first-child::before { top: 0; }
+  .cta-final.with-steps ol.cta-steps li b {
+    font-size: 0.92rem;
+    margin-bottom: 0.15rem;
+  }
+  .cta-final.with-steps ol.cta-steps li span {
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+  .cta-final::before {
+    width: 160px; height: 160px;
+    top: -30px; right: -30px;
+    opacity: 0.1;
+    filter: blur(28px);
+  }
 
-  /* === Industry / proto card grids === */
-  .ind-card-grid, .proto-grid { grid-template-columns: 1fr; }
-  .ind-card { padding: 1.8rem 1.4rem; }
-  .ind-card .ind-name { font-size: 1.55rem; }
-
-  /* === Note entries === */
-  .note-entry { grid-template-columns: 1fr; gap: 0.65rem; padding: 1.5rem 0; }
-  .note-entry .nside { flex-direction: row; gap: 1rem; text-align: left; padding-top: 0; flex-wrap: wrap; }
-  .note-entry h3 { font-size: 1.3rem; }
-  .note-entry .nteaser { font-size: 0.94rem; }
-
-  /* === Article note list (forthcoming entries) === */
-  .note { grid-template-columns: 4rem 1fr; gap: 1rem; padding: 1.6rem 0; }
-  .note .note-side { grid-column: 2; flex-direction: row; gap: 1rem; padding-top: 0; flex-wrap: wrap; }
-
-  /* === Glossary === */
-  .term { grid-template-columns: 1fr; gap: 0.5rem; padding: 1.2rem 0; }
-  .term .term-name { font-size: 1.3rem; }
-  .term .term-def { font-size: 0.96rem; }
-  .letter-section h2 { font-size: 4rem; }
-  .gloss-search { padding: 1rem 0; }
-  .gloss-search input { font-size: 1rem; }
-  .az-nav { gap: 0; padding: 1rem 0; flex-wrap: wrap; }
-  .az-nav a { padding: 0.35rem 0.55rem; font-size: 0.72rem; }
-
-  /* === Carrier list (homepage) === */
-  .carrier-row { grid-template-columns: 1.8rem 1fr; gap: 0.7rem; padding: 0.9rem 0.4rem; }
-  .carrier-row .meta { display: none; }
-  .carrier-row .name { font-size: 1.15rem; }
-
-  /* === Capabilities grid === */
-  .capabilities-grid { grid-template-columns: 1fr; }
-  .cap-card { padding: 1.85rem 1.4rem; }
-  .cap-card h3 { font-size: 1.5rem; }
-  .cap-cta { gap: 1rem; }
-  .cap-cta h3 { font-size: 1.5rem; }
-
-  /* === Inventory section === */
-  .inv-grid-2 { gap: 2rem; }
-  .inv-col h4, .inv-carriers h4 { font-size: 0.66rem; }
-  .inv-col ul { font-size: 1.15rem; }
-
-  /* === Industry pages — coverage list and cards === */
-  .cov-list { grid-template-columns: 1fr; }
-  .cov-list li { font-size: 1.05rem; }
-  .ind-grid { grid-template-columns: 1fr; }
-  .ind-cell { padding: 1.85rem 1.4rem; }
-  .ind-cell h3 { font-size: 1.45rem; }
-  .pull { font-size: 1.4rem; padding: 1.5rem 0; margin: 2rem 0; }
-
-  /* === Service timeline === */
-  .timeline { margin-left: 0.5rem; padding-left: 1.6rem; }
-  .timeline-item h3 { font-size: 1.4rem; }
-  .timeline-item .when { font-size: 0.65rem; }
-  .deliverables { grid-template-columns: 1fr; gap: 1rem; }
-  .deliverable { padding: 1.4rem 1.2rem; }
-
-  /* === Inline stats (industry pages) === */
-  .inline-stats { grid-template-columns: repeat(2, 1fr); padding: 1.5rem 0; gap: 1rem 0; }
-  .inline-stat { padding: 0.5rem 0.85rem; border-right: 1px solid var(--c-line); }
-  .inline-stat:nth-child(2n) { border-right: 0; }
-  .inline-stat .istat-num { font-size: 1.85rem; }
-  .inline-stat .istat-label { font-size: 0.58rem; }
-
-  /* === About section === */
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .about-aside { position: static; }
-  .facts li { padding: 0.7rem 0; grid-template-columns: 5rem 1fr; gap: 0.85rem; }
-  .about-prose p { font-size: 1.02rem; }
-  .pull-quote { font-size: 1.45rem; padding: 1.5rem 0; margin: 1.8rem 0; }
-
-  /* === Portfolio / project list === */
-  .featured { padding: 2.4rem 1.6rem; grid-template-columns: 1fr; gap: 1.5rem; }
-  .featured h3 { font-size: 1.85rem; }
-  .featured p { font-size: 0.95rem; }
-  .proj { grid-template-columns: 1fr; gap: 0.85rem; padding: 1.8rem 0; }
-  .proj h3 { font-size: 1.5rem; }
-  .proj p { font-size: 0.94rem; }
-  .proj .proj-side { text-align: left; flex-direction: row; flex-wrap: wrap; gap: 0.85rem; padding-top: 0; }
-  .proj:hover { padding-left: 0.5rem; padding-right: 0.5rem; }
-
-  /* === Contact section === */
-  .contact { padding: 3rem 0; }
-  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .contact-intro { font-size: 1.2rem; padding-bottom: 2rem; margin-bottom: 2rem; }
-  .form-row { grid-template-columns: 1fr; gap: 0; }
-  .info-block .info-val { font-size: 1.25rem; }
-
-  /* === Footer === */
-  .footer { padding: 3rem 0 1.5rem; }
-  .footer-grid { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 1.5rem; margin-bottom: 1.25rem; }
-  .footer-statement { padding-bottom: 2rem; margin-bottom: 2rem; }
-  .footer-statement h3 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
-  .footer-rule, .foot-bottom { grid-template-columns: 1fr; gap: 0.6rem; flex-direction: column; align-items: flex-start; text-align: left; }
-
-  /* === Buttons — touch targets === */
-  .btn { padding: 0.85rem 1.25rem; min-height: 44px; font-size: 0.74rem; }
-
-  /* === Page header === */
-  .page-header { padding: 2.75rem 0 2.25rem; }
-  .page-meta { gap: 0.85rem 1rem; flex-wrap: wrap; }
-
-  /* === Reading progress bar — keep full width === */
+  /* === Reading progress thinner === */
   .read-progress { height: 2px; }
 }
 
 @media (max-width: 480px) {
-  /* === Phone portrait — tightest layout === */
-  :root { --pad-x: 1rem; }
+  .container { padding: 0 0.95rem; }
 
-  .masthead-inner { padding: 0.65rem 0.85rem; gap: 0.5rem; }
-  .brandmark { font-size: 1.15rem; }
-  .brandmark .mark-meta { display: none; }
-  .nav-links { gap: 0.55rem 0.9rem; font-size: 0.74rem; }
-  .availability { font-size: 0.58rem; }
-  .availability::before { width: 6px; height: 6px; }
+  /* Page header even tighter */
+  .page-header { padding: 1.5rem 0 1.2rem; }
+  .page-title { font-size: clamp(1.6rem, 9vw, 2.2rem); }
+  .page-lead { font-size: 0.94rem; }
 
-  .hero { padding: 2.25rem 0 2.75rem; }
-  .hero-headline { font-size: clamp(1.85rem, 13vw, 3rem); }
-  .hero-tagline { font-size: 0.95rem; }
-  .credential { font-size: 0.6rem; padding: 0.35rem 0.6rem; letter-spacing: 0.08em; }
-
-  .stats-grid { gap: 1rem 0; }
-  .stat { padding: 0.75rem 0; }
-  .stat-num { font-size: 2.2rem; }
-  .stat-label { font-size: 0.56rem; }
-
-  .featured-article::before { display: none; }
-  .featured-article { padding: 1.75rem 1.25rem 1.4rem; }
-  .featured-article h2 { font-size: 1.5rem; }
-
+  /* Article paragraphs tighter */
   .article h2 { font-size: 1.4rem; }
-  .article > .container > p:first-of-type::first-letter { font-size: 3rem; padding: 0.25rem 0.45rem 0 0; }
+  .article p { font-size: 0.96rem; }
 
-  .cta-final h3, .footer-statement h3, .cap-cta h3, .newsletter-inline h4 { font-size: 1.4rem; line-height: 1.1; }
+  /* Timeline yet smaller */
+  .timeline {
+    margin-left: 0.25rem;
+    padding-left: 1.25rem;
+  }
+  .timeline-item::before {
+    left: -1.55rem;
+    width: 10px; height: 10px;
+    box-shadow: 0 0 0 1.25px var(--c-accent);
+  }
+  .timeline-item h3 { font-size: 1.2rem; }
+  .timeline-item p { font-size: 0.88rem; }
 
-  .featured h3 { font-size: 1.55rem; }
-  .proj h3, .ind-cell h3, .cap-card h3 { font-size: 1.35rem; }
+  /* Deliverables tighter */
+  .deliverable { padding: 1.15rem 1.05rem; }
+  .deliverable p { font-size: 0.88rem; }
 
-  .ticker-track { font-size: 1rem; padding: 0.85rem 0; }
+  /* Tier cards tighter */
+  .tier-card { padding: 1.6rem 1.2rem 1.4rem; }
+  .tier-card .tier-headline { font-size: 1.3rem; margin-bottom: 0.95rem; }
+  .tier-card ul li { font-size: 0.88rem; padding: 0.5rem 0 0.5rem 1.1rem; }
+  .tier-card .btn, .tier-card .btn-ghost { font-size: 0.66rem; padding: 0.8rem 0.9rem; }
+  .tier-card .tier-badge { font-size: 0.54rem; padding: 0.25rem 0.6rem; }
 
-  .page-title { font-size: clamp(1.85rem, 9vw, 2.8rem); }
-  .page-lead { font-size: 0.96rem; }
-
-  /* Project / portfolio side-meta hidden on tiny screens to clean up */
-  .proj .proj-side { font-size: 0.62rem; }
-
-  /* Inv-col list size */
-  .inv-col ul { font-size: 1rem; }
-
-  /* About facts more compact */
-  .facts li { grid-template-columns: 4.5rem 1fr; font-size: 0.86rem; }
-
-  /* Tighter buttons */
-  .btn { padding: 0.8rem 1.1rem; font-size: 0.72rem; }
+  /* CTA tighter on smallest phones */
+  .cta-final { padding: 1.7rem 1.2rem; }
+  .cta-final.with-steps { padding: 1.7rem 1.2rem; gap: 1.3rem; }
+  .cta-final h3 { font-size: 1.35rem; }
+  .cta-final p { font-size: 0.92rem; }
+  .cta-final .btn { padding: 0.8rem 1.1rem; font-size: 0.68rem; }
+  .cta-final.with-steps ol.cta-steps li b { font-size: 0.88rem; }
+  .cta-final.with-steps ol.cta-steps li span { font-size: 0.78rem; }
 }
 
-/* === Touch + accessibility === */
-@media (hover: none) {
-  /* Disable hover lift on touch devices to prevent sticky states */
-  .feature-card:hover, .proto-card:hover, .ind-card:hover, .resource-card:hover,
-  .tier-card:hover, .featured-article:hover, .featured:hover {
-    transform: none;
-    box-shadow: none;
-  }
+@media (max-width: 360px) {
+  /* Smallest phones (iPhone SE etc.) — last-mile tightening */
+  .container { padding: 0 0.8rem; }
+  .page-title { font-size: 1.6rem; }
+  .article h2 { font-size: 1.3rem; }
+  .timeline-item h3 { font-size: 1.12rem; }
+  .tier-card .tier-headline { font-size: 1.2rem; }
+  .cta-final h3 { font-size: 1.25rem; }
 }
 
 </style>
