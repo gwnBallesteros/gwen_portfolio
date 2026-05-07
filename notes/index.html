@@ -390,59 +390,7 @@ a { color: inherit; text-decoration: none; }
   z-index: 1; position: relative;
 }
 
-/* Featured article hero — for Notes index */
-.featured-article {
-  background: var(--c-text); color: var(--c-dark-text);
-  padding: 3.5rem 3rem;
-  border-radius: var(--radius);
-  margin-bottom: 4rem;
-  position: relative; overflow: hidden;
-  display: grid; grid-template-columns: 1fr 1.6fr; gap: 3rem;
-  align-items: center;
-  transition: transform 320ms ease;
-  cursor: pointer;
-}
-.featured-article:hover { transform: translateY(-3px); }
-.featured-article::before {
-  content: 'FEATURED'; position: absolute;
-  top: 1.4rem; right: 2rem;
-  font-family: var(--f-mono); font-size: 0.68rem;
-  letter-spacing: 0.2em; color: var(--c-accent);
-}
-.featured-article .feat-badge {
-  font-family: var(--f-mono); font-size: 0.7rem;
-  text-transform: uppercase; letter-spacing: 0.18em;
-  color: var(--c-accent); margin-bottom: 1rem; display: block;
-}
-.featured-article h2 {
-  font-family: var(--f-display);
-  font-size: clamp(2rem, 4.4vw, 3.2rem);
-  line-height: 1.05; letter-spacing: -0.015em;
-  font-weight: 400; margin: 0 0 1.2rem;
-}
-.featured-article h2 em { color: var(--c-accent); font-style: italic; }
-.featured-article p {
-  color: var(--c-dark-text); opacity: 0.85;
-  font-size: 1.05rem; line-height: 1.65; margin: 0 0 1.5rem;
-}
-.featured-article .feat-meta {
-  font-family: var(--f-mono); font-size: 0.66rem;
-  text-transform: uppercase; letter-spacing: 0.16em;
-  color: var(--c-dark-muted);
-}
-.featured-article .feat-side {
-  text-align: left;
-}
-.featured-article .feat-side .num {
-  font-family: var(--f-display); font-size: 8rem;
-  line-height: 1; color: var(--c-accent);
-  font-style: italic; font-weight: 400;
-  margin: 0;
-}
-@media (max-width: 700px) {
-  .featured-article { grid-template-columns: 1fr; padding: 2.5rem 1.6rem; }
-  .featured-article .feat-side .num { font-size: 5rem; }
-}
+/* === Featured article — see refreshed block below === */
 
 /* Engagement tier cards — for service deep-dive pages */
 .tier-grid {
@@ -968,6 +916,119 @@ a { transition: color 200ms ease; }
   .article blockquote::after { display: none; }
 }
 
+
+/* === Featured article (refreshed) === */
+.featured-article {
+  background: var(--c-text);
+  color: var(--c-dark-text);
+  padding: 3.5rem 3rem 2.5rem;
+  border-radius: var(--radius);
+  margin-bottom: 4rem;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 320ms ease, box-shadow 320ms ease;
+}
+.featured-article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px -20px rgba(26, 22, 18, 0.28);
+}
+.featured-article::before {
+  content: '01';
+  position: absolute;
+  top: 50%; right: -2rem;
+  transform: translateY(-50%);
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: clamp(12rem, 28vw, 20rem);
+  line-height: 0.85;
+  color: var(--c-accent);
+  opacity: 0.16;
+  pointer-events: none;
+  letter-spacing: -0.05em;
+  user-select: none;
+  z-index: 0;
+}
+.featured-article > * { position: relative; z-index: 1; }
+.featured-article .feat-meta-bar {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 1.75rem;
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+.featured-article .feat-num {
+  color: var(--c-accent);
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--c-accent);
+  border-radius: 2px;
+}
+.featured-article .feat-cat {
+  color: var(--c-dark-muted);
+}
+.featured-article h2 {
+  font-family: var(--f-display);
+  font-size: clamp(2.2rem, 5.2vw, 3.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  margin: 0 0 1.5rem;
+  max-width: 18ch;
+  color: var(--c-bg);
+}
+.featured-article h2 em {
+  color: var(--c-accent);
+  font-style: italic;
+}
+.featured-article p {
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: var(--c-dark-text);
+  opacity: 0.85;
+  max-width: 60ch;
+  margin: 0 0 2rem;
+}
+.featured-article .feat-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--c-dark-line);
+}
+.featured-article .feat-stats {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--c-dark-muted);
+}
+.featured-article .feat-cta {
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--c-accent);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: padding-left 240ms ease;
+}
+.featured-article:hover .feat-cta { padding-left: 0.4rem; }
+.featured-article:hover .feat-cta .arrow { transform: translateX(4px); }
+.featured-article .feat-cta .arrow { transition: transform 240ms ease; }
+@media (max-width: 600px) {
+  .featured-article { padding: 2.5rem 1.6rem 2rem; }
+  .featured-article::before { font-size: 9rem; right: -1rem; }
+}
+
 </style>
 <style>
   .notes-list { list-style: none; margin: 0; padding: 0; }
@@ -1065,15 +1126,16 @@ a { transition: color 200ms ease; }
 
 <section class="editorial-section">
   <div class="container">
-    <a class="featured-article reveal" href="/notes/reading-a-loss-run/" style="display:grid;text-decoration:none;color:inherit;">
-        <div class="feat-side">
-          <span class="num">01</span>
+    <a class="featured-article reveal" href="/notes/reading-a-loss-run/" aria-label="Read the featured article — Reading a loss run without flinching">
+        <div class="feat-meta-bar">
+          <span class="feat-num">N&deg; 01</span>
+          <span class="feat-cat">Featured &middot; Underwriting</span>
         </div>
-        <div>
-          <span class="feat-badge">Featured · Underwriting</span>
-          <h2>Reading a loss run without <em>flinching.</em></h2>
-          <p>What three years of underwriting taught me about the stories loss runs tell, and the ones they hide. A practical reader's guide for account managers who want to think like an underwriter does.</p>
-          <span class="feat-meta">Published &nbsp;·&nbsp; 7 min read &nbsp;·&nbsp; May 2026</span>
+        <h2>Reading a loss run without <em>flinching.</em></h2>
+        <p>What three years of underwriting taught me about the stories loss runs tell, and the ones they hide. A practical reader&rsquo;s guide for account managers who want to think like an underwriter does.</p>
+        <div class="feat-footer">
+          <span class="feat-stats">Published &middot; 7 min read &middot; May 2026</span>
+          <span class="feat-cta">Read the article <span class="arrow">&rarr;</span></span>
         </div>
       </a>
 
