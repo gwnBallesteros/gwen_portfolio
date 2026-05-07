@@ -826,6 +826,63 @@ a { transition: color 200ms ease; }
   .article blockquote::after { display: none; }
 }
 
+
+/* === On the Desk footer block === */
+.foot-col .desk-statline {
+  display: flex; align-items: baseline; gap: 0.85rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--c-line);
+}
+.foot-col .desk-statline:first-of-type { border-top: 1px solid var(--c-line); }
+.foot-col .desk-num {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 2.4rem; line-height: 1;
+  color: var(--c-accent);
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  min-width: 2.6rem;
+}
+.foot-col .desk-num em {
+  font-size: 1.2rem;
+  font-style: normal;
+  font-family: var(--f-mono);
+  color: var(--c-muted);
+  margin-left: 0.15rem;
+  letter-spacing: 0;
+}
+.foot-col .desk-text {
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: var(--c-text);
+  margin: 0;
+}
+.foot-col .desk-text b { color: var(--c-accent); font-weight: 600; }
+.foot-col .desk-meta {
+  font-family: var(--f-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--c-muted);
+  margin-top: 1rem;
+  display: block;
+  line-height: 1.5;
+}
+.foot-col .desk-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--c-accent);
+  font-weight: 600;
+  transition: padding-left 200ms ease;
+}
+.foot-col .desk-cta:hover { padding-left: 0.4rem; }
+
 </style>
 
 <!-- BlogPosting schema for Google rich results -->
@@ -1020,9 +1077,17 @@ a { transition: color 200ms ease; }
         </ul>
       </div>
       <div class="foot-col">
-        <span class="foot-label">Colophon</span>
-        <p>Set in Instrument Serif and Manrope, with JetBrains Mono for technical accents. Hand-built as a single self-contained page. No trackers, no frameworks.</p>
-        <span style="font-family:var(--f-mono);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--c-muted);">U.S. · Philippines (Remote) · PHT (UTC+8)</span>
+        <span class="foot-label">On the Desk</span>
+        <div class="desk-statline">
+          <span class="desk-num">2<em>+</em></span>
+          <p class="desk-text">Open engagements this quarter, accepting new books.</p>
+        </div>
+        <div class="desk-statline">
+          <span class="desk-num">1<em>bd</em></span>
+          <p class="desk-text">Average reply window, Monday through Friday.</p>
+        </div>
+        <span class="desk-meta">PHT (UTC+8) &middot; Overlaps U.S. business hours</span>
+        <a href="/#contact" class="desk-cta">Start a conversation &rarr;</a>
       </div>
     </div>
     <div class="foot-bottom">
